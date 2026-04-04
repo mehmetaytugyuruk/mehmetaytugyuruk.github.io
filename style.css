@@ -59,7 +59,7 @@ a:hover {
 
 .nav-inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 52px;
 }
