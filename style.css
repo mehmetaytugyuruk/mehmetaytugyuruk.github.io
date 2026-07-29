@@ -123,20 +123,7 @@ body {
 
 .socials a:hover { color: var(--ink); }
 
-.socials .arr {
-  font-size: 0.62em;
-  display: inline-block;
-  opacity: 0;
-  transform: translate(-3px, 3px);
-  transition: opacity 0.18s, transform 0.2s var(--ease);
-  vertical-align: super;
-  font-variant-emoji: text;
-}
 
-.socials a:hover .arr {
-  opacity: 1;
-  transform: translate(0, 0);
-}
 
 /* ── Theme toggle button ─────────────────────────────────────────── */
 .controls {
@@ -255,25 +242,6 @@ main {
 
 a.entry:hover .word::after { width: 100%; }
 
-/* Arrow inside word — superscript style */
-.word .arr {
-  font-size: 0.44em;
-  vertical-align: super;
-  display: inline-block;
-  opacity: 0;
-  transform: translate(-5px, 5px);
-  transition: opacity 0.2s, transform 0.24s var(--ease);
-  color: var(--muted);
-  margin-left: 0.05em;
-  user-select: none;
-  font-variant-emoji: text;
-}
-
-a.entry:hover .word .arr {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
 /* CV meta tag (right side) */
 .meta-tag {
   font-size: 0.66rem;
@@ -301,7 +269,6 @@ a.entry:hover .word .arr {
 
 .word--cv::after { display: none; }
 .word--cv:hover { color: var(--ink); }
-.word--cv:hover .arr { opacity: 1; transform: translate(0, 0); }
 
 
 
@@ -324,14 +291,6 @@ a.entry:hover .word .arr {
 }
 
 .back-link:hover { color: var(--accent); }
-
-.back-arr {
-  display: inline-block;
-  transition: transform 0.18s var(--ease);
-  font-variant-emoji: text;
-}
-
-.back-link:hover .back-arr { transform: translateX(-3px); }
 
 /* ── Page main (sub-pages scrollable area) ───────────────────────── */
 .page-main {
