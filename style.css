@@ -1,0 +1,677 @@
+/* ================================================================
+   mehmetaytugyuruk.github.io — style.css
+   Inspired by mrbesher.com
+   Fraunces display · system UI body · linen light / slate dark
+   ================================================================ */
+
+/* ── Design Tokens ─────────────────────────────────────────────── */
+:root {
+  --paper:    #F7F6F2;
+  --ink:      #18181B;
+  --muted:    #71717A;
+  --hairline: #E2E0D8;
+  --accent:   #2E3A8C;
+  --acc2:     #5A6BB8;
+  --sel:      rgba(46, 58, 140, 0.12);
+  --ease:     cubic-bezier(0.22, 0.9, 0.28, 1);
+  --gutter:   max(5vw, calc(50% - 22rem));
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --paper:    #1B1A18;
+  --ink:      #E9E7E1;
+  --muted:    #9B988F;
+  --hairline: #2D2C29;
+  --accent:   #93A0E0;
+  --acc2:     #6070B8;
+  --sel:      rgba(147, 160, 224, 0.18);
+  color-scheme: dark;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+  background: var(--paper);
+  transition: background-color 0.45s var(--ease);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh; /* fallback */
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-x: hidden; /* fallback */
+  overflow-x: clip;
+  isolation: isolate;
+  background: transparent;
+  color: var(--ink);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: color 0.45s var(--ease);
+}
+
+/* ── Canvas background ─────────────────────────────────────────── */
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+}
+
+.bg-canvas.visible { opacity: 1; }
+
+/* ── Masthead ───────────────────────────────────────────────────── */
+.masthead {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: clamp(1.75rem, 4.5vh, 3.5rem) var(--gutter) 0;
+  gap: 1rem;
+}
+
+/* ── Name / Identity (home) ─────────────────────────────────────── */
+.name {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.55rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 0.35rem 0;
+  color: var(--ink);
+}
+
+.role {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0 0 0.9rem 0;
+  letter-spacing: 0.01em;
+}
+
+/* ── Social links ───────────────────────────────────────────────── */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.1rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socials a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.socials a:hover { color: var(--ink); }
+
+.socials .arr {
+  font-size: 0.62em;
+  display: inline-block;
+  opacity: 0;
+  transform: translate(-3px, 3px);
+  transition: opacity 0.18s, transform 0.2s var(--ease);
+  vertical-align: super;
+  font-variant-emoji: text;
+}
+
+.socials a:hover .arr {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ── Theme toggle button ─────────────────────────────────────────── */
+.controls {
+  padding-top: 0.15rem;
+  flex-shrink: 0;
+}
+
+.ctl {
+  background: none;
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--muted);
+  transition: color 0.18s, border-color 0.18s;
+  padding: 0;
+}
+
+.ctl:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+/* Icon visibility per theme */
+:root:not([data-theme='dark']) .ic-sun { display: none; }
+:root:not([data-theme='dark']) .ic-moon { display: block; }
+:root[data-theme='dark'] .ic-sun { display: block; }
+:root[data-theme='dark'] .ic-moon { display: none; }
+
+/* ── Main / Directory (home page) ────────────────────────────── */
+main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  padding: clamp(0.75rem, 2vh, 1.5rem) var(--gutter) clamp(0.5rem, 1.5vh, 1rem);
+}
+
+.directory {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dir-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dir-list li {
+  border-bottom: 1px solid var(--hairline);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  max-height: 8rem;
+}
+.dir-list li:first-child { border-top: 1px solid var(--hairline); }
+
+/* ── Directory entry ─────────────────────────────────────────────── */
+.entry {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding: 0.55rem 0;
+  text-decoration: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* Entry counter number */
+.entry-n {
+  font-size: 0.64rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-family: system-ui;
+  min-width: 1.4rem;
+  flex-shrink: 0;
+  user-select: none;
+  padding-top: 0.5em;
+}
+
+/* Large display word */
+.word {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(1.9rem, 4.5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  text-decoration: none;
+  position: relative;
+}
+
+/* Underline slide animation on hover */
+.word::after {
+  content: '';
+  position: absolute;
+  bottom: 0.06em;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.4s var(--ease);
+}
+
+a.entry:hover .word::after { width: 100%; }
+
+/* Arrow inside word — superscript style */
+.word .arr {
+  font-size: 0.44em;
+  vertical-align: super;
+  display: inline-block;
+  opacity: 0;
+  transform: translate(-5px, 5px);
+  transition: opacity 0.2s, transform 0.24s var(--ease);
+  color: var(--muted);
+  margin-left: 0.05em;
+  user-select: none;
+  font-variant-emoji: text;
+}
+
+a.entry:hover .word .arr {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* CV meta tag (right side) */
+.meta-tag {
+  font-size: 0.66rem;
+  color: var(--muted);
+  font-family: system-ui;
+  margin-left: auto;
+  align-self: center;
+  user-select: none;
+  opacity: 0.75;
+}
+
+/* File entry (CV) — outer span is not a link */
+.entry--file {
+  display: flex;
+  align-items: baseline;
+  gap: 1.1rem;
+  padding: 0.55rem 0;
+}
+
+/* CV word is muted since file not yet available */
+.word--cv {
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.word--cv::after { display: none; }
+.word--cv:hover { color: var(--ink); }
+.word--cv:hover .arr { opacity: 1; transform: translate(0, 0); }
+
+
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SUB-PAGE STYLES
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* ── Back link (sub-page masthead) ───────────────────────────────── */
+.back-link {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(0.9rem, 1.7vw, 1.05rem);
+  font-weight: 400;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.18s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.back-link:hover { color: var(--accent); }
+
+.back-arr {
+  display: inline-block;
+  transition: transform 0.18s var(--ease);
+  font-variant-emoji: text;
+}
+
+.back-link:hover .back-arr { transform: translateX(-3px); }
+
+/* ── Page main (sub-pages scrollable area) ───────────────────────── */
+.page-main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: block;
+  align-items: initial;
+  padding: clamp(2.5rem, 6vh, 5rem) var(--gutter) clamp(2rem, 4vh, 3rem);
+  overflow-y: auto;
+}
+
+/* ── Page title ──────────────────────────────────────────────────── */
+.page-title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ink);
+  margin: 0 0 clamp(2rem, 5vh, 3.5rem) 0;
+}
+
+/* ── Section label ───────────────────────────────────────────────── */
+.section-label {
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin: 2.5rem 0 0.9rem 0;
+}
+
+.section-label:first-child { margin-top: 0; }
+
+/* ── Item list (publications) ────────────────────────────────────── */
+.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  gap: 1.1rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.item:first-child { border-top: 1px solid var(--hairline); }
+
+.item-n {
+  font-size: 0.73rem;
+  color: var(--muted);
+  font-family: system-ui;
+  font-weight: 600;
+  flex-shrink: 0;
+  min-width: 1.5rem;
+  line-height: 1.6;
+  padding-top: 0.06rem;
+}
+
+.item-body { flex: 1; min-width: 0; }
+
+.item-title {
+  font-size: 0.91rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  line-height: 1.6;
+  display: block;
+}
+
+.item-title:hover { text-decoration: underline; }
+
+.item-authors {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0.28rem 0 0 0;
+  line-height: 1.5;
+}
+
+.item-venue {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0.1rem 0 0 0;
+}
+
+.item-links {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Chip button (DOI, Code, Weights) */
+.chip {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  padding: 0.18rem 0.55rem;
+  transition: background 0.15s, color 0.15s;
+  display: inline-block;
+}
+
+.chip:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+/* ── About page ─────────────────────────────────────────────────── */
+.about-body { max-width: 38rem; }
+
+.about-para {
+  font-size: 0.93rem;
+  line-height: 1.88;
+  color: var(--ink);
+  margin: 0 0 1rem 0;
+}
+
+.about-para strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.interests-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1.5rem 0 2.25rem 0;
+}
+
+.interest-chip {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 0.2rem 0.65rem;
+  opacity: 0.82;
+  display: inline-block;
+}
+
+.contact-block {
+  border-top: 1px solid var(--hairline);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.contact-line {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin: 0;
+}
+
+.contact-label {
+  font-size: 0.63rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  min-width: 5rem;
+  flex-shrink: 0;
+}
+
+.contact-value {
+  font-size: 0.84rem;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a.contact-value:hover { text-decoration: underline; color: var(--accent); }
+
+/* ── Project items ───────────────────────────────────────────────── */
+.project-item {
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.project-item:first-of-type { border-top: 1px solid var(--hairline); }
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.project-name {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  display: inline-block;
+  position: relative;
+}
+
+.project-name::after {
+  content: '';
+  position: absolute;
+  bottom: 0.05em;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.35s var(--ease);
+}
+
+.project-name:hover::after { width: 100%; }
+
+.project-tag {
+  font-size: 0.63rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-family: system-ui;
+}
+
+.project-desc {
+  font-size: 0.86rem;
+  color: var(--muted);
+  line-height: 1.68;
+  margin: 0.45rem 0 0 0;
+  max-width: 36rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+/* ── Education items ─────────────────────────────────────────────── */
+.edu-section { margin-bottom: 2.75rem; }
+.edu-section:last-child { margin-bottom: 0; }
+
+.edu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.edu-item {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.edu-item:first-child { border-top: 1px solid var(--hairline); }
+
+.edu-degree {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.edu-degree a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.edu-degree a:hover { text-decoration: underline; color: var(--accent); }
+
+.edu-place {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.edu-period {
+  font-size: 0.74rem;
+  color: var(--muted);
+  margin-top: 0.12rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  :root { --gutter: max(1rem, 4vw); }
+
+  .masthead { padding-top: 1.5rem; }
+
+  main {
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+  }
+
+  /* Remove desktop max-height cap — phone screens are small enough */
+  .dir-list li { max-height: none; }
+
+  .entry, .entry--file { width: 100%; padding: 0; }
+
+  .name { font-size: 1.25rem; }
+  .role { font-size: 0.74rem; }
+  .socials a { font-size: 0.74rem; }
+  .socials { gap: 0.05rem 0.8rem; }
+
+  .word { font-size: clamp(1.75rem, 9.5vw, 2.8rem); }
+
+  /* Sub-pages */
+  .page-title { font-size: clamp(2rem, 11vw, 3rem); }
+
+  .item { flex-direction: column; gap: 0.25rem; }
+  .item-n { min-width: auto; }
+
+  .contact-line { flex-direction: column; gap: 0.1rem; }
+  .contact-label { min-width: auto; }
+}
+
+@media (max-width: 380px) {
+  :root { --gutter: 0.85rem; }
+}
+
+/* ── Focus (keyboard accessibility) ──────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+.ctl:focus-visible {
+  outline-offset: 1px;
+}
+
+/* ── Print ───────────────────────────────────────────────────────── */
+@media print {
+  .bg-canvas, .ctl { display: none; }
+  .masthead { padding-top: 1rem; }
+}
