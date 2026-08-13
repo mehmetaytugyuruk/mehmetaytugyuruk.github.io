@@ -85,6 +85,42 @@ body {
 }
 
 /* ── Name / Identity (home) ─────────────────────────────────────── */
+.identity {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 2vw, 1.4rem);
+}
+
+.identity-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Portrait photo ──────────────────────────────────────────────── */
+.portrait {
+  width: clamp(68px, 7vw, 92px);
+  height: clamp(68px, 7vw, 92px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+  filter: grayscale(12%);
+  box-shadow: 0 0 0 1px var(--hairline);
+  transition: box-shadow 0.25s, filter 0.25s;
+}
+
+.portrait:hover {
+  filter: grayscale(0%);
+  box-shadow: 0 0 0 2px var(--muted);
+}
+
+@media (max-width: 480px) {
+  .portrait {
+    width: 54px;
+    height: 54px;
+  }
+}
+
 .name {
   font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-size: clamp(1.55rem, 3vw, 2.4rem);
@@ -635,31 +671,4 @@ a.contact-value:hover { text-decoration: underline; color: var(--accent); }
   .masthead { padding-top: 1rem; }
 }
 
-/* ── Portrait photo (home masthead) ─────────────────────────────── */
-.portrait-wrap {
-  display: flex;
-  align-items: flex-start;
-  padding-top: 0.1rem;
-  flex-shrink: 0;
-}
-
-.portrait {
-  width: clamp(78px, 8.5vw, 108px);
-  height: clamp(78px, 8.5vw, 108px);
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
-  border: 2px solid var(--hairline);
-  transition: border-color 0.25s, transform 0.3s var(--ease);
-  display: block;
-}
-
-.portrait:hover {
-  border-color: var(--muted);
-  transform: scale(1.03);
-}
-
-@media (max-width: 520px) {
-  .portrait-wrap { display: none; }
-}
 
