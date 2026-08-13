@@ -635,36 +635,31 @@ a.contact-value:hover { text-decoration: underline; color: var(--accent); }
   .masthead { padding-top: 1rem; }
 }
 
-/* ── Subnav (sub-page masthead navigation) ──────────────────────── */
-.subnav {
+/* ── Portrait photo (home masthead) ─────────────────────────────── */
+.portrait-wrap {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0 1.4rem;
-  margin-top: 0.45rem;
+  align-items: flex-start;
+  padding-top: 0.1rem;
+  flex-shrink: 0;
 }
 
-.subnav-link {
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.18s;
-  padding-bottom: 0.05rem;
-  border-bottom: 1px solid transparent;
+.portrait {
+  width: clamp(78px, 8.5vw, 108px);
+  height: clamp(78px, 8.5vw, 108px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--hairline);
+  transition: border-color 0.25s, transform 0.3s var(--ease);
+  display: block;
 }
 
-.subnav-link:hover {
-  color: var(--ink);
-}
-
-.subnav-link--active {
-  color: var(--ink);
-  border-bottom-color: var(--ink);
+.portrait:hover {
+  border-color: var(--muted);
+  transform: scale(1.03);
 }
 
 @media (max-width: 520px) {
-  .subnav { gap: 0 1rem; }
-  .subnav-link { font-size: 0.72rem; }
+  .portrait-wrap { display: none; }
 }
 
