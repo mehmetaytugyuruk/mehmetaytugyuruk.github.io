@@ -634,3 +634,37 @@ a.contact-value:hover { text-decoration: underline; color: var(--accent); }
   .bg-canvas, .ctl { display: none; }
   .masthead { padding-top: 1rem; }
 }
+
+/* ── Subnav (sub-page masthead navigation) ──────────────────────── */
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.4rem;
+  margin-top: 0.45rem;
+}
+
+.subnav-link {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s;
+  padding-bottom: 0.05rem;
+  border-bottom: 1px solid transparent;
+}
+
+.subnav-link:hover {
+  color: var(--ink);
+}
+
+.subnav-link--active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  .subnav { gap: 0 1rem; }
+  .subnav-link { font-size: 0.72rem; }
+}
+
