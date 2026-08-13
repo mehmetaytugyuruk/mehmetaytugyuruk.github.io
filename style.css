@@ -263,63 +263,7 @@ a.entry:hover .word::after { width: 100%; }
    SUB-PAGE STYLES
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-/* ── Sub-page masthead (horizontal: back-link left, nothing right) ── */
-.masthead--sub {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: left;
-  gap: 0;
-}
 
-/* ── Back link (sub-page masthead) ───────────────────────────────── */
-.back-link {
-  font-family: 'Fraunces', Georgia, serif;
-  font-size: clamp(0.9rem, 1.7vw, 1.05rem);
-  font-weight: 400;
-  color: var(--ink);
-  text-decoration: none;
-  letter-spacing: -0.01em;
-  transition: color 0.18s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.back-link:hover { color: var(--accent); }
-
-/* ── Subnav (sub-page navigation) ───────────────────────────────── */
-.subnav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1.4rem;
-  margin-top: 0.45rem;
-}
-
-.subnav-link {
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.18s;
-  padding-bottom: 0.05rem;
-  border-bottom: 1px solid transparent;
-}
-
-.subnav-link:hover {
-  color: var(--ink);
-}
-
-.subnav-link--active {
-  color: var(--ink);
-  border-bottom-color: var(--ink);
-}
-
-@media (max-width: 520px) {
-  .subnav { gap: 0 1rem; }
-  .subnav-link { font-size: 0.72rem; }
-}
 
 /* ── Page main (sub-pages scrollable area) ───────────────────────── */
 .page-main {
