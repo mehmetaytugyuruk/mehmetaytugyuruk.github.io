@@ -1,7 +1,6 @@
 /* ================================================================
    mehmetaytugyuruk.github.io — style.css
-   Inspired by mrbesher.com
-   Fraunces display · system UI body · linen light / slate dark
+   Fraunces display · system UI body · light theme
    ================================================================ */
 
 /* ── Design Tokens ─────────────────────────────────────────────── */
@@ -11,22 +10,9 @@
   --muted:    #71717A;
   --hairline: #E2E0D8;
   --accent:   #2E3A8C;
-  --acc2:     #5A6BB8;
-  --sel:      rgba(46, 58, 140, 0.12);
   --ease:     cubic-bezier(0.22, 0.9, 0.28, 1);
   --gutter:   max(5vw, calc(50% - 22rem));
   color-scheme: light;
-}
-
-:root[data-theme='dark'] {
-  --paper:    #1B1A18;
-  --ink:      #E9E7E1;
-  --muted:    #9B988F;
-  --hairline: #2D2C29;
-  --accent:   #93A0E0;
-  --acc2:     #6070B8;
-  --sel:      rgba(147, 160, 224, 0.18);
-  color-scheme: dark;
 }
 
 /* ── Reset ─────────────────────────────────────────────────────── */
@@ -36,7 +22,6 @@ html {
   -webkit-text-size-adjust: 100%;
   scrollbar-gutter: stable;
   background: var(--paper);
-  transition: background-color 0.45s var(--ease);
 }
 
 body {
@@ -56,7 +41,6 @@ body {
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: color 0.45s var(--ease);
 }
 
 /* ── Canvas background ─────────────────────────────────────────── */
@@ -73,18 +57,55 @@ body {
 
 .bg-canvas.visible { opacity: 1; }
 
-/* ── Masthead ───────────────────────────────────────────────────── */
+/* ── Masthead (home) — centered column layout ───────────────────── */
 .masthead {
   position: relative;
   z-index: 2;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: clamp(1.75rem, 4.5vh, 3.5rem) var(--gutter) 0;
-  gap: 1rem;
+  text-align: center;
+  padding: clamp(2rem, 5vh, 4rem) var(--gutter) 0;
+  gap: 0;
 }
 
-/* ── Name / Identity (home) ─────────────────────────────────────── */
+/* ── Portrait photo ──────────────────────────────────────────────── */
+.portrait-wrap {
+  margin-bottom: 1.35rem;
+}
+
+.portrait {
+  display: block;
+  width: clamp(100px, 13vw, 136px);
+  height: clamp(100px, 13vw, 136px);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 18%;
+  /* Double-ring: photo edge → paper gap → outer hairline ring */
+  box-shadow:
+    0 0 0 1.5px var(--hairline),
+    0 0 0 5px var(--paper),
+    0 0 0 6.5px var(--hairline);
+  filter: grayscale(8%);
+  transition: filter 0.4s ease, box-shadow 0.35s ease;
+}
+
+.portrait:hover {
+  filter: grayscale(0%);
+  box-shadow:
+    0 0 0 1.5px var(--muted),
+    0 0 0 5px var(--paper),
+    0 0 0 6.5px var(--hairline);
+}
+
+/* ── Identity block ──────────────────────────────────────────────── */
+.identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Name ────────────────────────────────────────────────────────── */
 .name {
   font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
   font-size: clamp(1.55rem, 3vw, 2.4rem);
@@ -106,6 +127,7 @@ body {
 .socials {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.1rem 1rem;
   margin: 0;
   padding: 0;
@@ -122,40 +144,6 @@ body {
 }
 
 .socials a:hover { color: var(--ink); }
-
-
-
-/* ── Theme toggle button ─────────────────────────────────────────── */
-.controls {
-  padding-top: 0.15rem;
-  flex-shrink: 0;
-}
-
-.ctl {
-  background: none;
-  border: 1px solid var(--hairline);
-  border-radius: 6px;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: var(--muted);
-  transition: color 0.18s, border-color 0.18s;
-  padding: 0;
-}
-
-.ctl:hover {
-  color: var(--ink);
-  border-color: var(--ink);
-}
-
-/* Icon visibility per theme */
-:root:not([data-theme='dark']) .ic-sun { display: none; }
-:root:not([data-theme='dark']) .ic-moon { display: block; }
-:root[data-theme='dark'] .ic-sun { display: block; }
-:root[data-theme='dark'] .ic-moon { display: none; }
 
 /* ── Main / Directory (home page) ────────────────────────────── */
 main {
@@ -271,10 +259,18 @@ a.entry:hover .word::after { width: 100%; }
 .word--cv:hover { color: var(--ink); }
 
 
-
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    SUB-PAGE STYLES
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+/* ── Sub-page masthead (horizontal: back-link left, nothing right) ── */
+.masthead--sub {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0;
+}
 
 /* ── Back link (sub-page masthead) ───────────────────────────────── */
 .back-link {
@@ -291,6 +287,39 @@ a.entry:hover .word::after { width: 100%; }
 }
 
 .back-link:hover { color: var(--accent); }
+
+/* ── Subnav (sub-page navigation) ───────────────────────────────── */
+.subnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.4rem;
+  margin-top: 0.45rem;
+}
+
+.subnav-link {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.18s;
+  padding-bottom: 0.05rem;
+  border-bottom: 1px solid transparent;
+}
+
+.subnav-link:hover {
+  color: var(--ink);
+}
+
+.subnav-link--active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  .subnav { gap: 0 1rem; }
+  .subnav-link { font-size: 0.72rem; }
+}
 
 /* ── Page main (sub-pages scrollable area) ───────────────────────── */
 .page-main {
@@ -625,46 +654,8 @@ a.contact-value:hover { text-decoration: underline; color: var(--accent); }
   border-radius: 3px;
 }
 
-.ctl:focus-visible {
-  outline-offset: 1px;
-}
-
 /* ── Print ───────────────────────────────────────────────────────── */
 @media print {
-  .bg-canvas, .ctl { display: none; }
+  .bg-canvas { display: none; }
   .masthead { padding-top: 1rem; }
 }
-
-
-
-/* ── Portrait (home page) ────────────────────────────────────────── */
-.portrait-wrap {
-  /* centered automatically by masthead column flex + align-items: center */
-  margin-bottom: 0.25rem;
-}
-
-.portrait {
-  display: block;
-  width: clamp(100px, 13vw, 136px);
-  height: clamp(100px, 13vw, 136px);
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center 18%;
-  /* Double-ring: photo edge → paper gap → outer hairline */
-  box-shadow:
-    0 0 0 1.5px var(--hairline),
-    0 0 0 5px var(--paper),
-    0 0 0 6.5px var(--hairline);
-  filter: grayscale(8%);
-  transition: filter 0.4s ease, box-shadow 0.35s ease;
-}
-
-.portrait:hover {
-  filter: grayscale(0%);
-  box-shadow:
-    0 0 0 1.5px var(--muted),
-    0 0 0 5px var(--paper),
-    0 0 0 6.5px var(--hairline);
-}
-
-

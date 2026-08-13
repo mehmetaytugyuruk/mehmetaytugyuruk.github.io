@@ -1,33 +1,9 @@
 /* mehmetaytugyuruk.github.io — main.js
-   Theme toggle · animated canvas background (soft drifting blobs)
+   Animated canvas background (soft drifting blobs)
    ---------------------------------------------------------------- */
 
 (function () {
   'use strict';
-
-  var root = document.documentElement;
-
-  /* ──────────────────────────────────────────────────────────────
-     Theme
-  ────────────────────────────────────────────────────────────── */
-
-  function currentTheme() {
-    return root.dataset.theme === 'dark' ? 'dark' : 'light';
-  }
-
-  function applyTheme(t) {
-    root.dataset.theme = t;
-    var m = document.getElementById('meta-theme-color');
-    if (m) m.setAttribute('content', t === 'dark' ? '#1B1A18' : '#F7F6F2');
-    try { localStorage.setItem('theme', t); } catch (e) {}
-  }
-
-  var themeBtn = document.getElementById('theme-toggle');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function () {
-      applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
-    });
-  }
 
   /* ──────────────────────────────────────────────────────────────
      Animated Canvas Background
@@ -45,9 +21,9 @@
 
   /* Blob parameters (fractional viewport coords) */
   var BLOBS = [
-    { ox: 0.16, oy: 0.24, r: 0.58, phase: 0.00,     ax: 0.11, ay: 0.07, spd: 0.00022 },
-    { ox: 0.82, oy: 0.77, r: 0.50, phase: Math.PI,  ax: 0.09, ay: 0.12, spd: 0.00031 },
-    { ox: 0.54, oy: 0.43, r: 0.63, phase: 1.57,     ax: 0.06, ay: 0.08, spd: 0.00017 },
+    { ox: 0.16, oy: 0.24, r: 0.58, phase: 0.00,    ax: 0.11, ay: 0.07, spd: 0.00022 },
+    { ox: 0.82, oy: 0.77, r: 0.50, phase: Math.PI, ax: 0.09, ay: 0.12, spd: 0.00031 },
+    { ox: 0.54, oy: 0.43, r: 0.63, phase: 1.57,    ax: 0.06, ay: 0.08, spd: 0.00017 },
   ];
 
   function resize() {
@@ -56,10 +32,7 @@
   }
 
   function blobColor(alpha) {
-    /* Indigo tone: dark mode uses lighter indigo, light mode uses deep indigo */
-    return currentTheme() === 'dark'
-      ? 'rgba(147,160,224,' + alpha + ')'
-      : 'rgba(46,58,140,'   + alpha + ')';
+    return 'rgba(46,58,140,' + alpha + ')';
   }
 
   function frame() {
@@ -67,7 +40,7 @@
     var w = canvas.width, h = canvas.height;
     ctx.clearRect(0, 0, w, h);
 
-    var maxA = currentTheme() === 'dark' ? 0.062 : 0.052;
+    var maxA = 0.052;
 
     for (var i = 0; i < BLOBS.length; i++) {
       var b = BLOBS[i];
