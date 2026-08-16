@@ -241,22 +241,13 @@ a.entry:hover .word::after { width: 100%; }
   opacity: 0.75;
 }
 
-/* File entry (CV) — outer span is not a link */
+/* File entry (CV) */
 .entry--file {
   display: flex;
   align-items: baseline;
   gap: 1.1rem;
   padding: 0.55rem 0;
 }
-
-/* CV word is muted since file not yet available */
-.word--cv {
-  color: var(--muted);
-  transition: color 0.2s;
-}
-
-.word--cv::after { display: none; }
-.word--cv:hover { color: var(--ink); }
 
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
