@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    background:#F7F6F2;color:#18181B;
+    font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    display:flex;align-items:center;gap:72px;
+    padding:0 96px;
+  }
+  .portrait{
+    width:260px;height:260px;border-radius:50%;object-fit:cover;object-position:center 18%;
+    flex-shrink:0;
+    box-shadow:0 0 0 2px #E2E0D8, 0 0 0 10px #F7F6F2, 0 0 0 12px #E2E0D8;
+  }
+  .name{
+    font-family:'Fraunces',Georgia,serif;font-weight:600;
+    font-size:78px;line-height:1.05;letter-spacing:-0.03em;
+    margin-bottom:22px;
+  }
+  .role{font-size:27px;color:#6E6E76;letter-spacing:0.01em;line-height:1.45}
+  .rule{height:1px;background:#E2E0D8;margin:30px 0 26px}
+  .tags{font-size:22px;color:#6E6E76;letter-spacing:0.02em}
+  .url{
+    position:absolute;bottom:52px;left:96px;
+    font-size:20px;color:#2E3A8C;letter-spacing:0.04em;
+  }
+</style></head><body>
+  <img class="portrait" src="/photo.jpeg" alt="">
+  <div>
+    <div class="name">Mehmet Aytuğ Yürük</div>
+    <div class="role">Undergraduate Researcher · Istanbul University<br>Department of Artificial Intelligence Engineering</div>
+    <div class="rule"></div>
+    <div class="tags">Deep Learning · Computer Vision · Medical Image Analysis</div>
+  </div>
+  <div class="url">mehmetaytugyuruk.github.io</div>
+</body></html>

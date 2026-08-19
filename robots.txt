@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /tools/
 
 Sitemap: https://mehmetaytugyuruk.github.io/sitemap.xml
