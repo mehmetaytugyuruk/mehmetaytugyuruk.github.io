@@ -341,6 +341,7 @@ a.entry:hover .word::after { width: 100%; }
 }
 
 .section-label:first-child { margin-top: 0; }
+.page-title + .section-label { margin-top: 0; }
 
 /* ── Item list (publications) ────────────────────────────────────── */
 .items {
