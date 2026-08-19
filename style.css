@@ -131,7 +131,6 @@ body {
   gap: 0.1rem 1rem;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 .socials a {
@@ -239,14 +238,6 @@ a.entry:hover .word::after { width: 100%; }
   align-self: center;
   user-select: none;
   opacity: 0.75;
-}
-
-/* File entry (CV) */
-.entry--file {
-  display: flex;
-  align-items: baseline;
-  gap: 1.1rem;
-  padding: 0.55rem 0;
 }
 
 
@@ -612,7 +603,7 @@ a.contact-value:hover { text-decoration: underline; color: var(--accent); }
   /* Remove desktop max-height cap — phone screens are small enough */
   .dir-list li { max-height: none; }
 
-  .entry, .entry--file { width: 100%; padding: 0; }
+  .entry { width: 100%; padding: 0; }
 
   .name { font-size: 1.25rem; }
   .role { font-size: 0.74rem; }
