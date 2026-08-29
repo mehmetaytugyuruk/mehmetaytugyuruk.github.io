@@ -1,0 +1,30 @@
+secondary_education:
+  credential: High School Diploma
+  institution: Sakarya Science High School
+  period: 2020–2024
+
+awards:
+  - title: TEKNOFEST 2025 — Research Project Competition
+    result: Finalist
+    detail: 2242 University Students Research Project Competition · Information and Communication Technologies
+    period: "2025"
+    certificate_url: /certificates/teknofest-2025-certificate.pdf
+    certificate_label: Finalist certificate
+  - title: TÜBİTAK 2204-D Climate Change Research Projects Competition
+    result: Two-time finalist
+    detail: High School Students Climate Change Research Projects Competition
+    period: 2022 and 2023
+    certificate_url: /certificates/tubitak-2023-certificate.pdf
+    certificate_label: 2023 final-competition certificate
+
+conferences:
+  - title: IISEC 2026
+    detail: 5th International Informatics and Software Engineering Conference
+    date: 5–6 February 2026
+    certificate_url: /certificates/iisec-2026-certificate.pdf
+    certificate_label: Participation certificate
+  - title: SIU 2026
+    detail: 34th Signal Processing and Communications Applications Conference
+    date: 7–10 July 2026
+    certificate_url: /certificates/siu-2026-certificate.pdf
+    certificate_label: Participation certificate

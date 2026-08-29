@@ -1,155 +1,81 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mehmet Aytuğ Yürük</title>
-  <meta name="description" content="Mehmet Aytuğ Yürük — AI researcher at Istanbul University. Deep learning, computer vision, medical image analysis.">
-  <meta name="keywords" content="Mehmet Aytuğ Yürük, Aytug Yuruk, AI Researcher, Deep Learning, Computer Vision, Medical Image Analysis, Istanbul University">
-  <meta name="author" content="Mehmet Aytuğ Yürük">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <link rel="canonical" href="https://mehmetaytugyuruk.github.io/">
-  <link rel="alternate" hreflang="en" href="https://mehmetaytugyuruk.github.io/">
-  <link rel="alternate" hreflang="x-default" href="https://mehmetaytugyuruk.github.io/">
+---
+layout: default
+title: Mehmet Aytuğ Yürük
+description: Computer vision researcher working on medical imaging, reproducible deep learning, and research engineering.
+home: true
+nav_key: home
+---
+<main id="main-content" class="home-main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-portrait">
+      <img
+        class="portrait"
+        src="{{ site.data.profile.portrait | relative_url }}"
+        alt="{{ site.data.profile.portrait_alt }}"
+        width="152"
+        height="152">
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">{{ site.data.profile.role }}</p>
+      <h1 id="hero-title">{{ site.data.profile.name }}</h1>
+      <p class="hero-positioning">{{ site.data.profile.positioning }}</p>
+      <p class="hero-context">{{ site.data.profile.education_context | escape }}</p>
+      <div class="text-actions" aria-label="Primary actions">
+        <a class="text-link text-link-strong" href="{{ '/publications/' | relative_url }}">View Publications</a>
+        <a class="text-link" href="{{ site.data.profile.cv | relative_url }}" target="_blank" rel="noopener noreferrer">CV · PDF</a>
+      </div>
+      <nav class="profile-links" aria-label="External profiles">
+        {% for profile in site.data.profile.profiles %}
+          <a href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </section>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mehmet Aytuğ Yürük">
-  <meta property="og:description" content="AI researcher at Istanbul University. Deep learning, computer vision, medical image analysis.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mehmetaytugyuruk.github.io/">
-  <meta property="og:image" content="https://mehmetaytugyuruk.github.io/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Mehmet Aytuğ Yürük — Undergraduate Researcher, Istanbul University">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Mehmet Aytuğ Yürük">
+  <section class="home-section selected-research" aria-labelledby="selected-research-title">
+    <div class="section-kicker">
+      <p class="eyebrow">Selected Research</p>
+      <p class="section-index" aria-hidden="true">01</p>
+    </div>
+    <div class="feature-content">
+      <h2 id="selected-research-title">{{ site.data.research.title }}</h2>
+      {% assign published = site.data.publications | where: "status", "published" %}
+      {% assign under_review = site.data.publications | where: "status", "under_review" %}
+      <p class="status-line">Three sequential studies · {{ published.size }} published · {{ under_review.size }} under review</p>
+      <p class="feature-summary">{{ site.data.research.homepage_summary }}</p>
+      <ol class="mini-progression" aria-label="Research progression">
+        {% for study in site.data.research.studies %}
+          <li><span>{{ study.number }}</span>{{ study.short_label }}</li>
+        {% endfor %}
+      </ol>
+      <div class="text-actions">
+        <a class="text-link text-link-strong" href="{{ '/publications/' | relative_url }}">View Publications</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mehmet Aytuğ Yürük">
-  <meta name="twitter:description" content="AI researcher at Istanbul University.">
-  <meta name="twitter:image" content="https://mehmetaytugyuruk.github.io/og-image.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-  <meta name="theme-color" content="#F7F6F2">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="/style.css">
-
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://mehmetaytugyuruk.github.io/#person",
-        "name": "Mehmet Aytuğ Yürük",
-        "alternateName": ["Aytuğ Yürük", "Aytug Yuruk", "Mehmet Aytug Yuruk"],
-        "url": "https://mehmetaytugyuruk.github.io",
-        "image": "https://mehmetaytugyuruk.github.io/photo.jpeg",
-        "email": "yurukmehmetaytug@gmail.com",
-        "jobTitle": "Undergraduate Researcher",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Istanbul University",
-          "department": "Department of Artificial Intelligence Engineering"
-        },
-        "description": "Undergraduate researcher specializing in deep learning, computer vision, medical image analysis, and explainable AI.",
-        "knowsAbout": ["Deep Learning", "Computer Vision", "Medical Image Analysis", "Explainable AI", "Vision Transformers", "Self-Supervised Learning"],
-        "sameAs": [
-          "https://github.com/mehmetaytugyuruk",
-          "https://scholar.google.com.tr/citations?user=5FcgqlwAAAAJ",
-          "https://www.linkedin.com/in/mehmetaytugyuruk/",
-          "https://x.com/mehmetaytug",
-          "https://huggingface.co/mehmetaytugyuruk"
-        ]
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://mehmetaytugyuruk.github.io/#website",
-        "name": "Mehmet Aytuğ Yürük",
-        "url": "https://mehmetaytugyuruk.github.io",
-        "author": { "@id": "https://mehmetaytugyuruk.github.io/#person" },
-        "inLanguage": "en"
-      }
-    ]
-  }
-  </script>
-</head>
-<body>
-
-<!-- Animated canvas background -->
-<canvas class="bg-canvas" id="bg-canvas" aria-hidden="true"></canvas>
-
-<header class="masthead">
-  <!-- Portrait: top of column, centered by parent -->
-  <div class="portrait-wrap">
-    <img src="/photo.jpeg" alt="Mehmet Aytuğ Yürük" class="portrait" width="120" height="120">
-  </div>
-  <!-- Identity: centered below portrait -->
-  <div class="identity">
-    <h1 class="name">Mehmet Aytuğ Yürük</h1>
-    <p class="role">Undergraduate Researcher · Istanbul University</p>
-    <nav class="socials" aria-label="Elsewhere">
-      <a href="mailto:yurukmehmetaytug@gmail.com">Email</a>
-      <a href="https://github.com/mehmetaytugyuruk" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href="https://scholar.google.com.tr/citations?user=5FcgqlwAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Scholar</a>
-      <a href="https://www.linkedin.com/in/mehmetaytugyuruk/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://x.com/mehmetaytug" target="_blank" rel="noopener noreferrer">X</a>
-      <a href="https://huggingface.co/mehmetaytugyuruk" target="_blank" rel="noopener noreferrer">Hugging Face</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <nav class="directory" aria-label="Site directory">
-    <ol class="dir-list">
-      <li>
-        <a class="entry" href="/pages/about/">
-          <span class="entry-n" aria-hidden="true">01</span>
-          <span class="word">About</span>
-        </a>
-      </li>
-      <li>
-        <a class="entry" href="/pages/publications/">
-          <span class="entry-n" aria-hidden="true">02</span>
-          <span class="word">Publications</span>
-        </a>
-      </li>
-      <li>
-        <a class="entry" href="/pages/projects/">
-          <span class="entry-n" aria-hidden="true">03</span>
-          <span class="word">Projects</span>
-        </a>
-      </li>
-      <li>
-        <a class="entry" href="/pages/education/">
-          <span class="entry-n" aria-hidden="true">04</span>
-          <span class="word">Education</span>
-        </a>
-      </li>
-      <li>
-        <a class="entry" href="/cv.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download CV as PDF">
-          <span class="entry-n" aria-hidden="true">05</span>
-          <span class="word">CV</span>
-          <span class="meta-tag">pdf</span>
-        </a>
-      </li>
-    </ol>
-  </nav>
+  <section class="home-section software-section" aria-labelledby="software-title">
+    <div class="section-kicker">
+      <p class="eyebrow">Open Source</p>
+      <p class="section-index" aria-hidden="true">02</p>
+    </div>
+    <div class="software-list">
+      <h2 id="software-title" class="visually-hidden">Open Source</h2>
+      {% for project in site.data.software %}
+        <article class="software-entry">
+          <header>
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.label }}{% if project.activity %} · {{ project.activity }}{% endif %}</p>
+          </header>
+          <p class="software-description">{{ project.description }}</p>
+          <div class="inline-links" aria-label="{{ project.name }} links">
+            <a href="{{ '/open-source/#' | append: project.id | relative_url }}">View Project</a>
+            {% for link in project.links %}
+              <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
 </main>
-
-
-<script src="/main.js" defer></script>
-</body>
-</html>

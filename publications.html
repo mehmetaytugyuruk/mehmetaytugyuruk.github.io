@@ -1,0 +1,63 @@
+---
+layout: page
+title: Publications
+eyebrow: Publications
+description: Peer-reviewed publications and manuscripts under review by Mehmet Aytuğ Yürük, with DOI, code, model, and research-context links.
+intro: The authoritative bibliographic record for the current retinal fundus age-estimation research line.
+nav_key: publications
+permalink: /publications/
+---
+<script type="application/ld+json">
+[
+  {% for publication in site.data.publications %}
+  {% assign record_fragment = '/publications/#publication-' | append: publication.index %}
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "@id": {{ record_fragment | absolute_url | jsonify }},
+    "headline": {{ publication.title | jsonify }},
+    "author": [
+      {% for author in publication.authors %}{ "@type": "Person", "name": {{ author.name | jsonify }} }{% unless forloop.last %},{% endunless %}{% endfor %}
+    ],
+    "creativeWorkStatus": {{ publication.status_label | jsonify }},
+    {% if publication.date_published %}"datePublished": {{ publication.date_published | jsonify }},{% endif %}
+    {% if publication.doi %}"identifier": {{ publication.doi | jsonify }},
+    "sameAs": {{ publication.doi | jsonify }},{% endif %}
+    "isPartOf": {
+      "@type": "CreativeWork",
+      "name": {{ publication.venue | jsonify }}
+    },
+    "url": {{ record_fragment | absolute_url | jsonify }},
+    "hasPart": [
+      { "@type": "SoftwareSourceCode", "name": "Source code", "url": {{ publication.code | jsonify }} },
+      { "@type": "CreativeWork", "name": "Model checkpoints", "url": {{ publication.weights | jsonify }} }
+    ]
+  }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
+</script>
+
+{% assign scholar = site.data.profile.profiles | where: "label", "Scholar" | first %}
+<p class="publication-source">
+  <a class="text-link" href="{{ scholar.url | escape }}" target="_blank" rel="noopener noreferrer">Google Scholar profile</a>
+</p>
+
+{% assign published = site.data.publications | where: "status", "published" %}
+{% assign under_review = site.data.publications | where: "status", "under_review" %}
+
+<section class="publication-group" aria-labelledby="published-title">
+  <h2 id="published-title" class="section-label">Published</h2>
+  <div class="publication-list">
+    {% for publication in published %}
+      {% include publication-entry.html publication=publication %}
+    {% endfor %}
+  </div>
+</section>
+<section class="publication-group" aria-labelledby="review-title">
+  <h2 id="review-title" class="section-label">Under Review</h2>
+  <div class="publication-list">
+    {% for publication in under_review %}
+      {% include publication-entry.html publication=publication %}
+    {% endfor %}
+  </div>
+</section>
