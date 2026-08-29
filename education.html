@@ -1,0 +1,61 @@
+---
+layout: page
+title: Education
+eyebrow: Education
+description: Education and selected distinctions of Mehmet Aytuğ Yürük, a B.Sc. in Artificial Intelligence & Data Engineering candidate at Istanbul University.
+intro: Formal education, selected research competitions, and conference participation.
+nav_key: education
+permalink: /education/
+---
+<section class="editorial-section education-section" aria-labelledby="degrees-title">
+  <h2 id="degrees-title" class="section-label">Degrees</h2>
+  <ul class="editorial-list education-list">
+    <li class="editorial-row">
+      <p class="entry-meta">{{ site.data.profile.education_period }}</p>
+      <div class="entry-body">
+        <h3>{{ site.data.profile.degree | escape }}</h3>
+        <p>{{ site.data.profile.institution }}</p>
+      </div>
+    </li>
+    <li class="editorial-row">
+      <p class="entry-meta">{{ site.data.education.secondary_education.period }}</p>
+      <div class="entry-body">
+        <h3>{{ site.data.education.secondary_education.institution }}</h3>
+        <p>{{ site.data.education.secondary_education.credential }}</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section class="editorial-section education-section" id="awards" aria-labelledby="awards-title">
+  <h2 id="awards-title" class="section-label">Awards &amp; Competitions</h2>
+  <ul class="editorial-list education-list">
+    {% for item in site.data.education.awards %}
+      <li class="editorial-row">
+        <p class="entry-meta">{{ item.period }}</p>
+        <div class="entry-body">
+          <h3>{{ item.title }}</h3>
+          <p class="entry-result">{{ item.result }}</p>
+          <p>{{ item.detail }}</p>
+          <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }}</a></p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="editorial-section education-section" id="conference-participation" aria-labelledby="conferences-title">
+  <h2 id="conferences-title" class="section-label">Conference Participation</h2>
+  <ul class="editorial-list education-list">
+    {% for item in site.data.education.conferences %}
+      <li class="editorial-row">
+        <p class="entry-meta">{{ item.date }}</p>
+        <div class="entry-body">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.detail }}</p>
+          <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }}</a></p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

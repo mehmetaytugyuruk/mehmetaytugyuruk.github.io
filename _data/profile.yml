@@ -1,0 +1,38 @@
+name: Mehmet Aytuğ Yürük
+short_name: Mehmet Aytuğ Yürük
+role: Computer Vision Researcher
+positioning: Medical imaging, reproducible deep learning, and research engineering.
+education_context: B.Sc. student in Artificial Intelligence & Data Engineering at Istanbul University.
+degree: B.Sc. in Artificial Intelligence & Data Engineering
+institution: Istanbul University
+education_period: 2024–2028 · Expected
+location: Istanbul, Türkiye
+email: yurukmehmetaytug@gmail.com
+portrait: /photo.jpeg
+portrait_alt: Portrait of Mehmet Aytuğ Yürük
+cv: /cv.pdf
+profiles:
+  - label: Email
+    url: mailto:yurukmehmetaytug@gmail.com
+    external: false
+  - label: GitHub
+    url: https://github.com/mehmetaytugyuruk
+    external: true
+  - label: Scholar
+    url: https://scholar.google.com.tr/citations?user=5FcgqlwAAAAJ&hl=en
+    external: true
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/mehmetaytugyuruk/
+    external: true
+  - label: X
+    url: https://x.com/mehmetaytug
+    external: true
+  - label: Hugging Face
+    url: https://huggingface.co/mehmetaytugyuruk
+    external: true
+research_interests:
+  - Computer Vision
+  - Medical Image Analysis
+  - Reproducible Deep Learning
+  - Vision Transformers & CNNs
+  - Research Engineering

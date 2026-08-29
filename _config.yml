@@ -1,0 +1,13 @@
+title: Mehmet Aytuğ Yürük
+description: Computer vision research in medical imaging, reproducible deep learning, and research engineering.
+url: https://mehmetaytugyuruk.github.io
+baseurl: ""
+lang: en
+timezone: Europe/Istanbul
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - README.md
+  - tools

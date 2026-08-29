@@ -1,0 +1,46 @@
+---
+layout: page
+title: About
+eyebrow: About
+description: About Mehmet Aytuğ Yürük, a computer vision researcher at Istanbul University working on medical imaging and reproducible deep learning.
+intro: Research profile, current interests, and ways to connect.
+nav_key: about
+permalink: /about/
+---
+<section class="about-section about-biography" aria-labelledby="biography-title">
+  <h2 id="biography-title" class="section-label">Short Biography</h2>
+  <div class="about-prose">
+    <p>I am a computer vision researcher and a candidate for the <strong>{{ site.data.profile.degree }}</strong> at <strong>{{ site.data.profile.institution }}</strong>. My work focuses on medical image analysis, reproducible deep learning, and research engineering.</p>
+    <p>My current research examines retinal fundus age estimation through sequential studies of residual networks, Vision Transformers, preprocessing choices, and controlled colour-representation experiments. Across this work, I treat patient-level evaluation, inspectable artifacts, and conservative interpretation as part of the research method—not as afterthoughts. Alongside empirical studies, I build open-source tools that make computer-vision and medical-imaging workflows easier to validate, reuse, and extend across related research settings.</p>
+  </div>
+</section>
+
+<section class="about-section" aria-labelledby="interests-title">
+  <h2 id="interests-title" class="section-label">Research Interests</h2>
+  <ul class="interest-list">
+    {% for interest in site.data.profile.research_interests %}<li>{{ interest | escape }}</li>{% endfor %}
+  </ul>
+</section>
+
+<section class="about-section" aria-labelledby="approach-title">
+  <h2 id="approach-title" class="section-label">Working Approach</h2>
+  <p class="approach-copy">I favour patient-level, leakage-aware evaluation; reproducible experiments; and artifacts that make the analytical path inspectable. In medical-imaging work, I separate experimental evidence from clinical interpretation and avoid claims that the study design cannot support. I also prefer controlled comparisons that isolate one methodological change. Open-source research tooling is one way I make those practices concrete.</p>
+</section>
+
+<section class="about-section" aria-labelledby="profiles-title">
+  <h2 id="profiles-title" class="section-label">Contact / Profiles</h2>
+  <ul class="profile-directory">
+    {% for profile in site.data.profile.profiles %}
+      <li>
+        <span>{{ profile.label }}</span>
+        <a href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{% if profile.label == 'Email' %}{{ site.data.profile.email }}{% else %}{{ profile.label }} profile{% endif %}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <p class="about-context">{{ site.data.profile.institution }} · {{ site.data.profile.location }}</p>
+</section>
+
+<section class="about-section" aria-labelledby="cv-title">
+  <h2 id="cv-title" class="section-label">CV</h2>
+  <p class="cv-copy">For a concise record of education, research experience, publications, selected projects, and awards, <a href="{{ site.data.profile.cv | relative_url }}" target="_blank" rel="noopener noreferrer">view the current CV (PDF)</a>.</p>
+</section>

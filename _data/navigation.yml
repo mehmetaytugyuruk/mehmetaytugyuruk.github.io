@@ -1,0 +1,17 @@
+- label: Publications
+  url: /publications/
+  key: publications
+- label: Open Source
+  url: /open-source/
+  key: open-source
+- label: Education
+  url: /education/
+  key: education
+- label: About
+  url: /about/
+  key: about
+- label: CV
+  url: /cv.pdf
+  key: cv
+  pdf: true
+  external: true

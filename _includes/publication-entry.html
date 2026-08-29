@@ -1,0 +1,23 @@
+{% assign publication = include.publication %}
+<article class="publication-record" id="publication-{{ publication.index }}">
+  <div class="publication-index">
+    <p>Publication {{ publication.index }}</p>
+    <p>{{ publication.status_label }}</p>
+    <p>{% if publication.venue_context %}{{ publication.venue_context }}{% else %}{{ publication.venue_short }}{% endif %}</p>
+  </div>
+  <div class="publication-body">
+    <h3>{{ publication.title }}</h3>
+    <p class="publication-authors">
+      {% for author in publication.authors %}{% if author.name == site.data.profile.name %}<strong>{{ author.display }}</strong>{% else %}{{ author.display }}{% endif %}{% unless forloop.last %} and {% endunless %}{% endfor %}
+    </p>
+    <p class="publication-venue">
+      {{ publication.venue }}{% if publication.status == 'published' %} · {{ publication.date }}, {{ publication.location }}{% else %} · Manuscript under review{% endif %}
+    </p>
+    <p class="publication-contribution">{{ publication.contribution }}</p>
+    <div class="inline-links" aria-label="{{ publication.title }} actions">
+      {% if publication.doi %}<a href="{{ publication.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+      <a href="{{ publication.code }}" target="_blank" rel="noopener noreferrer">Code</a>
+      <a href="{{ publication.weights }}" target="_blank" rel="noopener noreferrer">Weights</a>
+    </div>
+  </div>
+</article>
