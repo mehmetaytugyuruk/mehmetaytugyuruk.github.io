@@ -19,8 +19,8 @@
   detail_description: biyoves is an open-source Python library and browser-based Web Studio for standards-based biometric, passport, and visa photo preparation. It combines SCRFD-based face detection and alignment with portrait matting, format-specific crop geometry, and automated quality preflight. The workflow supports standard photo formats and print templates, including 300-DPI PDF output, while preflight warnings remain advisory rather than a guarantee of issuing-authority acceptance. The library and Web Studio provide two access paths to the same preparation workflow.
   links:
     - label: GitHub
-      url: https://github.com/mehmetaytugyuruk/biyoves-python-library
+      url: https://github.com/mehmetaytugyuruk/biyoves
     - label: PyPI
       url: https://pypi.org/project/biyoves/
     - label: Web Studio
-      url: https://mehmetaytugyuruk.github.io/biyoves-python-library/
+      url: https://mehmetaytugyuruk.github.io/biyoves/
