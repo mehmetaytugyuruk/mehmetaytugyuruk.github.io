@@ -15,8 +15,8 @@
   date_published: "2026-02-05"
   location: Ankara
   doi: https://doi.org/10.1109/IISEC69317.2026.11418414
-  code: https://github.com/mehmetaytugyuruk/retina-resnet-age-estimation
-  weights: https://huggingface.co/mehmetaytugyuruk/retina-resnet-age-estimation
+  code: https://github.com/mehmetaytugyuruk/retina-resnet-age-prediction
+  weights: https://huggingface.co/mehmetaytugyuruk/retina-resnet-age-prediction
   research_anchor: study-resnet
   contribution: Establishes convolutional baselines for retinal age prediction by evaluating five residual-network variants and preprocessing settings, including Graham filtering, for chronological-age prediction and age categorisation under patient-level evaluation.
 
@@ -37,8 +37,8 @@
   date_published: "2026-07-07"
   location: Istanbul
   doi: https://doi.org/10.1109/SIU71813.2026.11636734
-  code: https://github.com/mehmetaytugyuruk/retina-vit-age-estimation
-  weights: https://huggingface.co/mehmetaytugyuruk/retina-vit-age-estimation
+  code: https://github.com/mehmetaytugyuruk/retina-vit-age-prediction
+  weights: https://huggingface.co/mehmetaytugyuruk/retina-vit-age-prediction
   research_anchor: study-vit
   contribution: Extends the same retinal age-prediction task and patient-level evaluation context to four Vision Transformer backbones, with an architecture-focused comparison to the published residual-network companion study.
 
@@ -58,6 +58,6 @@
   year: "2026"
   date: "2026"
   code: https://github.com/mehmetaytugyuruk/retina-color-spaces-age-prediction
-  weights: https://huggingface.co/mehmetaytugyuruk/retinal-color-transfer
+  weights: https://huggingface.co/mehmetaytugyuruk/retina-color-spaces-age-prediction
   research_anchor: study-colour
   contribution: Examines colour-space diversity, early fusion, and an equal-cost colour ensemble against a matched RGB-seed ensemble in a controlled ResNet-50 setting, with public predictions and analysis artifacts supporting the comparison.
