@@ -32,41 +32,49 @@ nav_key: home
     </div>
   </section>
 
-  <section class="home-section selected-research" aria-labelledby="selected-research-title">
-    <div class="section-kicker">
-      <p class="eyebrow">Selected Research</p>
-      <p class="section-index" aria-hidden="true">01</p>
-    </div>
-    <div class="feature-content">
-      <h2 id="selected-research-title">{{ site.data.research.title }}</h2>
-      <p class="feature-summary">{{ site.data.research.homepage_summary }}</p>
-      <div class="text-actions">
-        <a class="text-link text-link-strong" href="{{ '/publications/' | relative_url }}">View Publications</a>
+  <section class="selected-work" aria-labelledby="selected-work-title" data-work-carousel>
+    <header class="selected-work-header">
+      <div>
+        <p class="eyebrow">Selected Work</p>
+        <h2 id="selected-work-title" class="visually-hidden">Selected research and open-source work</h2>
       </div>
-    </div>
-  </section>
+      <div class="work-carousel-controls" data-carousel-controls hidden>
+        <button type="button" data-carousel-previous aria-label="Show previous work">
+          <span aria-hidden="true">←</span>
+        </button>
+        <button type="button" data-carousel-next aria-label="Show next work">
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+    </header>
 
-  <section class="home-section software-section" aria-labelledby="software-title">
-    <div class="section-kicker">
-      <p class="eyebrow">Open Source</p>
-      <p class="section-index" aria-hidden="true">02</p>
-    </div>
-    <div class="software-list">
-      <h2 id="software-title" class="visually-hidden">Open Source</h2>
-      {% for project in site.data.software %}
-        <article class="software-entry">
-          <header>
-            <h3>{{ project.name }}</h3>
-          </header>
-          <p class="software-description">{{ project.description }}</p>
-          <div class="inline-links" aria-label="{{ project.name }} links">
-            <a href="{{ '/open-source/#' | append: project.id | relative_url }}">View Project</a>
-            {% for link in project.links %}
-              <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
-            {% endfor %}
-          </div>
-        </article>
-      {% endfor %}
+    <div class="work-carousel-viewport" data-carousel-viewport tabindex="0" aria-label="Selected work; scroll horizontally to explore">
+      <div class="work-carousel-track">
+        {% for study in site.data.research.studies %}
+          {% assign publication = site.data.publications | where: "id", study.publication_id | first %}
+          {% assign publication_fragment = '/publications/#publication-' | append: publication.index %}
+          <article class="work-card-shell">
+            <a class="work-card" href="{{ publication_fragment | relative_url }}">
+              <p class="work-card-type">Research · Study {{ study.number }}</p>
+              <h3>{{ study.card_title }}</h3>
+              <p class="work-card-summary">{{ study.card_description }}</p>
+              <span class="work-card-action">View Publication <span aria-hidden="true">→</span></span>
+            </a>
+          </article>
+        {% endfor %}
+
+        {% for project in site.data.software %}
+          {% assign project_fragment = '/open-source/#' | append: project.id %}
+          <article class="work-card-shell">
+            <a class="work-card" href="{{ project_fragment | relative_url }}">
+              <p class="work-card-type">Open Source</p>
+              <h3>{{ project.name }}</h3>
+              <p class="work-card-summary">{{ project.description }}</p>
+              <span class="work-card-action">View Project <span aria-hidden="true">→</span></span>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
     </div>
   </section>
 </main>
