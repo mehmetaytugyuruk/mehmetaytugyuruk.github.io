@@ -8,18 +8,24 @@ studies:
     number: "01"
     short_label: CNN baselines
     heading: Residual Neural Networks
+    card_title: CNN Models for Retinal Age Estimation
+    card_description: Compares five ResNet architectures and retinal-image preprocessing settings, including Graham filtering, for chronological-age prediction and age categorisation under patient-level evaluation.
     stage: Task + CNN baseline investigation
     summary: Study 01 asks how residual-network architecture and retinal preprocessing affect chronological-age prediction and age categorisation. Five ResNet variants are evaluated with preprocessing settings that include Graham filtering, using patient-level partitions to keep images from the same person within one split. The study establishes the convolutional baseline and reports results for each defined configuration. Public artifacts include source code, patient-level split definitions in the project repository, and model checkpoints for the reported experiments. These materials document the evaluation setup and trained models.
   - publication_id: retinal-vit
     number: "02"
     short_label: Vision Transformers
     heading: Vision Transformers
+    card_title: Vision Transformers for Retinal Age Estimation
+    card_description: Evaluates four Vision Transformer architectures for chronological-age prediction from fundus images using the same patient-level evaluation setting as the CNN study.
     stage: Alternative backbone investigation
     summary: Study 02 asks how Vision Transformer backbones perform on the same retinal age-estimation task and patient-level evaluation context. Four Transformer variants extend the investigation beyond convolutional architectures. The change in backbone family isolates a new architectural question while preserving the established task framing. Comparisons with the earlier ResNet results use the published companion study as the reference. Public artifacts include source code, experiment configurations, and model checkpoints for the Transformer variants, supporting direct inspection of the implemented training and evaluation setup.
   - publication_id: retinal-colour
     number: "03"
     short_label: Colour representations
     heading: Alternative Colour Representations
+    card_title: Colour-Space Models for Retinal Age Estimation
+    card_description: Tests alternative colour spaces, channel-level fusion, and matched ensemble designs in a controlled ResNet-50 setting to isolate the effect of input representation.
     stage: Controlled representation study
     summary: Study 03 asks how input representation and ensemble construction affect retinal age estimation in a controlled ResNet-50 setting. It evaluates colour-space diversity, early fusion, and an equal-cost colour ensemble against a matched RGB-seed ensemble, separating representation diversity from additional training cost. The early-fusion experiment tests a distinct multi-channel input construction, while the matched ensemble comparison keeps the training budget aligned. Public artifacts include source code, model weights, tracked predictions, experiment configurations, and analysis outputs for the reported comparisons. These materials expose the analysis pathway used for the controlled comparisons. The manuscript remains under review.
 artifacts_note: Public research artifacts are provided where available. Depending on the study, these include source code, patient-level split definitions, model checkpoints, tracked predictions, configurations, and analysis outputs.

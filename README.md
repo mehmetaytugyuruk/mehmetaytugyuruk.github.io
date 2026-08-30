@@ -20,6 +20,7 @@ open-source.html          Research-engineering and computer-vision software
 education.html            Education and certificates
 about.html                Profile and contact details
 pages/                    Legacy route redirects
+carousel.js               Progressive enhancement for the Home work carousel
 ```
 
 Publication facts and links are stored in `_data/publications.yml`; the Home
@@ -34,8 +35,9 @@ jekyll build
 jekyll serve
 ```
 
-The site deliberately has no JavaScript framework, Node build pipeline, custom
-plugin, or animated background process.
+The site has no JavaScript framework, Node build pipeline, custom plugin, or
+animated background process. A small progressive-enhancement script controls
+the Home work carousel; its cards remain horizontally scrollable without it.
 
 ## Route compatibility
 
