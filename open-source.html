@@ -31,16 +31,9 @@ permalink: /open-source/
 {% assign medlint = site.data.software | where: "id", "medlint" | first %}
 {% assign medlint_github = medlint.links | where: "label", "GitHub" | first %}
 <section class="software-detail" id="medlint" aria-labelledby="medlint-title">
-  <div class="software-detail-index">
-    <p class="section-label">Research Engineering</p>
-    <p>Alpha · {{ medlint.activity }}</p>
-  </div>
   <div class="software-detail-body">
     <h2 id="medlint-title">{{ medlint.name }}</h2>
     <p class="software-detail-description">{{ medlint.detail_description }}</p>
-    <ul class="engineering-signals" aria-label="Selected medlint engineering signals">
-      {% for signal in medlint.signals %}<li>{{ signal }}</li>{% endfor %}
-    </ul>
     <p class="scope-note"><strong>Scope</strong> {{ medlint.scope }} <a href="{{ medlint_github.url }}" target="_blank" rel="noopener noreferrer">Review the full scope on GitHub.</a></p>
     <div class="inline-links" aria-label="medlint links">
       {% for link in medlint.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>{% endfor %}
@@ -50,16 +43,10 @@ permalink: /open-source/
 
 {% assign biyoves = site.data.software | where: "id", "biyoves" | first %}
 <section class="software-detail" id="biyoves" aria-labelledby="biyoves-title">
-  <div class="software-detail-index">
-    <p class="section-label">Applied Computer Vision</p>
-  </div>
   <div class="software-detail-body">
     <h2 id="biyoves-title">{{ biyoves.name }}</h2>
     <p class="software-detail-description">{{ biyoves.detail_description }}</p>
-    <ul class="engineering-signals" aria-label="Selected BiyoVes engineering signals">
-      {% for signal in biyoves.signals %}<li>{{ signal }}</li>{% endfor %}
-    </ul>
-    <div class="inline-links" aria-label="BiyoVes links">
+    <div class="inline-links" aria-label="biyoves links">
       {% for link in biyoves.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>{% endfor %}
     </div>
   </div>

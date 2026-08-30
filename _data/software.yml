@@ -2,16 +2,9 @@
   name: medlint
   version: "0.1.1"
   programming_language: Python
-  label: Research Engineering · Alpha
-  activity: Actively Developed
   description: An actively developed Python library for auditing medical-imaging dataset splits. It detects cross-split file and DICOM-identifier relationships and reports structured evidence with explicit coverage boundaries for review.
   detail_description: medlint is an alpha-stage, evidence-first Python library for auditing declared medical-imaging dataset splits before model training. It examines exact file relationships and selected DICOM identifiers across splits, then produces a deterministic report that separates observed evidence from audit coverage. The workflow is local, read-only, and designed to make potential contamination risks reviewable without changing source data. Its public API currently serves researchers and engineering teams that need a compact, inspectable pre-training checkpoint.
   scope: Current checks focus on byte-identical files and selected DICOM identifiers across declared dataset splits.
-  signals:
-    - PyPI v0.1.1
-    - Python 3.10–3.13
-    - CI with strict typing and tests
-    - Deterministic JSON report and published schema
   links:
     - label: GitHub
       url: https://github.com/mehmetaytugyuruk/medlint
@@ -19,17 +12,11 @@
       url: https://pypi.org/project/medlint/
 
 - id: biyoves
-  name: BiyoVes
+  name: biyoves
   version: "1.4.1"
   programming_language: Python
-  label: Applied Computer Vision
   description: An open-source Python library and Web Studio for standards-based biometric, passport, and visa photo preparation, combining face alignment, portrait matting, format-specific crop geometry, automated quality preflight, and print-ready photo layouts.
-  detail_description: BiyoVes is an open-source Python library and browser-based Web Studio for standards-based biometric, passport, and visa photo preparation. It combines SCRFD-based face detection and alignment with portrait matting, format-specific crop geometry, and automated quality preflight. The workflow supports standard photo formats and print templates, including 300-DPI PDF output, while preflight warnings remain advisory rather than a guarantee of issuing-authority acceptance. The library and Web Studio provide two access paths to the same preparation workflow.
-  signals:
-    - PyPI v1.4.1 · Python 3.8–3.13
-    - Browser-based Web Studio
-    - CI, Pages, and release workflows
-    - 300-DPI PDF output
+  detail_description: biyoves is an open-source Python library and browser-based Web Studio for standards-based biometric, passport, and visa photo preparation. It combines SCRFD-based face detection and alignment with portrait matting, format-specific crop geometry, and automated quality preflight. The workflow supports standard photo formats and print templates, including 300-DPI PDF output, while preflight warnings remain advisory rather than a guarantee of issuing-authority acceptance. The library and Web Studio provide two access paths to the same preparation workflow.
   links:
     - label: GitHub
       url: https://github.com/mehmetaytugyuruk/biyoves-python-library
