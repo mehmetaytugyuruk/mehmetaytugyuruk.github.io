@@ -1,10 +1,5 @@
 {% assign publication = include.publication %}
 <article class="publication-record" id="publication-{{ publication.index }}">
-  <div class="publication-index">
-    <p>Publication {{ publication.index }}</p>
-    <p>{{ publication.status_label }}</p>
-    <p>{% if publication.venue_context %}{{ publication.venue_context }}{% else %}{{ publication.venue_short }}{% endif %}</p>
-  </div>
   <div class="publication-body">
     <h3>{{ publication.title }}</h3>
     <p class="publication-authors">

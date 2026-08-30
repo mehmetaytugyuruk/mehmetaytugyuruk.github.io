@@ -5,7 +5,7 @@
     <nav class="desktop-nav" aria-label="Primary navigation">
       {% for item in site.data.navigation %}
         <a href="{{ item.url | relative_url }}"{% if page.nav_key == item.key %} aria-current="page"{% endif %}{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>
-          {{ item.label }}{% if item.pdf %}<span class="nav-meta">PDF</span>{% endif %}
+          {{ item.label }}
         </a>
       {% endfor %}
     </nav>
@@ -15,7 +15,7 @@
       <nav aria-label="Mobile navigation">
         {% for item in site.data.navigation %}
           <a href="{{ item.url | relative_url }}"{% if page.nav_key == item.key %} aria-current="page"{% endif %}{% if item.external %} target="_blank" rel="noopener noreferrer"{% endif %}>
-            {{ item.label }}{% if item.pdf %} · PDF{% endif %}
+            {{ item.label }}
           </a>
         {% endfor %}
       </nav>

@@ -13,5 +13,4 @@
 - label: CV
   url: /cv.pdf
   key: cv
-  pdf: true
   external: true
