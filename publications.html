@@ -3,7 +3,7 @@ layout: page
 title: Publications
 eyebrow: Publications
 description: Peer-reviewed publications and manuscripts under review by Mehmet Aytuğ Yürük, with DOI, code, model, and research-context links.
-intro: The authoritative bibliographic record for the current retinal fundus age-estimation research line.
+intro: The authoritative bibliographic record for the current retinal fundus age-prediction research line.
 nav_key: publications
 permalink: /publications/
 ---
@@ -40,6 +40,8 @@ permalink: /publications/
 {% assign scholar = site.data.profile.profiles | where: "label", "Scholar" | first %}
 <p class="publication-source">
   <a class="text-link" href="{{ scholar.url | escape }}" target="_blank" rel="noopener noreferrer">Google Scholar profile</a>
+  <span aria-hidden="true">·</span>
+  <a class="text-link" href="https://github.com/mehmetaytugyuruk/retinal-age-prediction" target="_blank" rel="noopener noreferrer">Research series overview</a>
 </p>
 
 {% assign published = site.data.publications | where: "status", "published" %}
