@@ -18,7 +18,7 @@
   code: https://github.com/mehmetaytugyuruk/retina-resnet-age-estimation
   weights: https://huggingface.co/mehmetaytugyuruk/retina-resnet-age-estimation
   research_anchor: study-resnet
-  contribution: Establishes convolutional baselines for retinal age estimation by evaluating five residual-network variants and preprocessing settings, including Graham filtering, for chronological-age prediction and age categorisation under patient-level evaluation.
+  contribution: Establishes convolutional baselines for retinal age prediction by evaluating five residual-network variants and preprocessing settings, including Graham filtering, for chronological-age prediction and age categorisation under patient-level evaluation.
 
 - id: retinal-vit
   index: "02"
@@ -40,7 +40,7 @@
   code: https://github.com/mehmetaytugyuruk/retina-vit-age-estimation
   weights: https://huggingface.co/mehmetaytugyuruk/retina-vit-age-estimation
   research_anchor: study-vit
-  contribution: Extends the same retinal age-estimation task and patient-level evaluation context to four Vision Transformer backbones, with an architecture-focused comparison to the published residual-network companion study.
+  contribution: Extends the same retinal age-prediction task and patient-level evaluation context to four Vision Transformer backbones, with an architecture-focused comparison to the published residual-network companion study.
 
 - id: retinal-colour
   index: "03"
@@ -57,7 +57,7 @@
   venue: IEEE International Conference on Advanced Technologies in Electrical, Electronics and Computing Engineering
   year: "2026"
   date: "2026"
-  code: https://github.com/mehmetaytugyuruk/retinal-color-transfer
+  code: https://github.com/mehmetaytugyuruk/retina-color-spaces-age-prediction
   weights: https://huggingface.co/mehmetaytugyuruk/retinal-color-transfer
   research_anchor: study-colour
   contribution: Examines colour-space diversity, early fusion, and an equal-cost colour ensemble against a matched RGB-seed ensemble in a controlled ResNet-50 setting, with public predictions and analysis artifacts supporting the comparison.
