@@ -8,6 +8,8 @@
       display: A. Memiş
   status: published
   status_label: Published
+  type: Conference Paper
+  topic: Retinal Age Prediction
   venue_short: IISEC 2026
   venue: 5th International Informatics and Software Engineering Conference
   year: "2026"
@@ -30,6 +32,8 @@
       display: A. Memiş
   status: published
   status_label: Published
+  type: Conference Paper
+  topic: Vision Transformers
   venue_short: SIU 2026
   venue: 34th Signal Processing and Communications Applications Conference
   year: "2026"
@@ -52,6 +56,8 @@
       display: A. Memiş
   status: under_review
   status_label: Under Review
+  type: Conference Manuscript
+  topic: Colour Representations
   venue_short: Under Review
   venue_context: ATEEC 2026
   venue: IEEE International Conference on Advanced Technologies in Electrical, Electronics and Computing Engineering

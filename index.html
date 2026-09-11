@@ -7,14 +7,6 @@ nav_key: home
 ---
 <main id="main-content" class="home-main">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-portrait">
-      <img
-        class="portrait"
-        src="{{ site.data.profile.portrait | relative_url }}"
-        alt="{{ site.data.profile.portrait_alt }}"
-        width="152"
-        height="152">
-    </div>
     <div class="hero-copy">
       <p class="eyebrow">{{ site.data.profile.role }}</p>
       <h1 id="hero-title">{{ site.data.profile.name }}</h1>
@@ -30,51 +22,57 @@ nav_key: home
         {% endfor %}
       </nav>
     </div>
+    <div class="hero-portrait">
+      <img
+        class="portrait"
+        src="{{ site.data.profile.portrait | relative_url }}"
+        alt="{{ site.data.profile.portrait_alt }}"
+        width="240"
+        height="300">
+    </div>
   </section>
 
-  <section class="selected-work" aria-labelledby="selected-work-title" data-work-carousel>
+  <section class="selected-work" aria-labelledby="selected-work-title">
     <header class="selected-work-header">
-      <div>
-        <p class="eyebrow">Selected Work</p>
-        <h2 id="selected-work-title" class="visually-hidden">Selected research and open-source work</h2>
-      </div>
-      <div class="work-carousel-controls" data-carousel-controls hidden>
-        <button type="button" data-carousel-previous aria-label="Show previous work">
-          <span aria-hidden="true">←</span>
-        </button>
-        <button type="button" data-carousel-next aria-label="Show next work">
-          <span aria-hidden="true">→</span>
-        </button>
-      </div>
+      <h2 id="selected-work-title">Selected Work</h2>
     </header>
 
-    <div class="work-carousel-viewport" data-carousel-viewport tabindex="0" aria-label="Selected work; scroll horizontally to explore">
-      <div class="work-carousel-track">
-        {% for study in site.data.research.studies %}
-          {% assign publication = site.data.publications | where: "id", study.publication_id | first %}
-          {% assign publication_fragment = '/publications/#publication-' | append: publication.index %}
-          <article class="work-card-shell">
-            <a class="work-card" href="{{ publication_fragment | relative_url }}">
-              <p class="work-card-type">Research · Study {{ study.number }}</p>
-              <h3>{{ study.card_title }}</h3>
-              <p class="work-card-summary">{{ study.card_description }}</p>
-              <span class="work-card-action">View Publication <span aria-hidden="true">→</span></span>
-            </a>
-          </article>
-        {% endfor %}
+    <div class="selected-work-list">
+      {% for study in site.data.research.studies %}
+        {% assign publication = site.data.publications | where: "id", study.publication_id | first %}
+        {% assign publication_fragment = '/publications/#publication-' | append: publication.index %}
+        <article class="selected-work-row">
+          <div class="selected-work-visual" aria-hidden="true"></div>
+          <div class="selected-work-body">
+            <p class="selected-work-meta">{{ publication.year }} · Research · {{ study.short_label }}</p>
+            <h3><a href="{{ publication_fragment | relative_url }}">{{ publication.title }}</a></h3>
+            <p class="selected-work-authors">
+              {% for author in publication.authors %}{% if author.name == site.data.profile.name %}<strong>{{ author.display }}</strong>{% else %}{{ author.display }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
+            </p>
+            <p class="selected-work-context">{{ publication.venue_short }} · {{ publication.status_label }}</p>
+            <div class="selected-work-links" aria-label="Links for {{ publication.title | escape }}">
+              {% if publication.doi %}<a href="{{ publication.doi }}" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>{% endif %}
+              <a href="{{ publication.code }}" target="_blank" rel="noopener noreferrer">Code <span aria-hidden="true">↗</span></a>
+              <a href="{{ publication.weights }}" target="_blank" rel="noopener noreferrer">Models <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
 
-        {% for project in site.data.software %}
-          {% assign project_fragment = '/open-source/#' | append: project.id %}
-          <article class="work-card-shell">
-            <a class="work-card" href="{{ project_fragment | relative_url }}">
-              <p class="work-card-type">Open Source</p>
-              <h3>{{ project.name }}</h3>
-              <p class="work-card-summary">{{ project.description }}</p>
-              <span class="work-card-action">View Project <span aria-hidden="true">→</span></span>
-            </a>
-          </article>
-        {% endfor %}
-      </div>
+      {% for project in site.data.software %}
+        {% assign project_fragment = '/open-source/#' | append: project.id %}
+        <article class="selected-work-row">
+          <div class="selected-work-visual" aria-hidden="true"></div>
+          <div class="selected-work-body">
+            <p class="selected-work-meta">Open Source · {{ project.category }}</p>
+            <h3><a href="{{ project_fragment | relative_url }}">{{ project.name }}</a></h3>
+            <p class="selected-work-context">{{ project.programming_language }} library · Version {{ project.version }}</p>
+            <div class="selected-work-links" aria-label="Links for {{ project.name | escape }}">
+              {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
     </div>
   </section>
 </main>

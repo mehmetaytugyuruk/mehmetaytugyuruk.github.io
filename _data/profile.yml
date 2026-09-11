@@ -12,9 +12,6 @@ portrait: /photo.jpeg
 portrait_alt: Portrait of Mehmet Aytuğ Yürük
 cv: /cv.pdf
 profiles:
-  - label: Email
-    url: mailto:yurukmehmetaytug@gmail.com
-    external: false
   - label: GitHub
     url: https://github.com/mehmetaytugyuruk
     external: true
@@ -23,9 +20,6 @@ profiles:
     external: true
   - label: LinkedIn
     url: https://www.linkedin.com/in/mehmetaytugyuruk/
-    external: true
-  - label: X
-    url: https://x.com/mehmetaytug
     external: true
   - label: Hugging Face
     url: https://huggingface.co/mehmetaytugyuruk

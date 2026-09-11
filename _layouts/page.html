@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main id="main-content" class="page-main">
+<main id="main-content" class="page-main{% if page.wide %} page-main-wide{% endif %}">
   <header class="page-heading">
     {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
     <h1 class="page-title">{{ page.title }}</h1>
