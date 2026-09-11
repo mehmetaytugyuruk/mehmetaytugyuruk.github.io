@@ -1,7 +1,6 @@
 ---
 layout: page
 title: About
-eyebrow: About
 description: About Mehmet Aytuğ Yürük, including his research focus, education, and professional profiles.
 intro: Research focus, education, and selected links.
 nav_key: about
@@ -20,17 +19,15 @@ wide: true
   <h2 id="education-title" class="section-label">Education</h2>
   <ul class="editorial-list education-list">
     <li class="editorial-row">
-      <p class="entry-meta">{{ site.data.profile.education_period }}</p>
       <div class="entry-body">
         <h3>{{ site.data.profile.degree | escape }}</h3>
-        <p>{{ site.data.profile.institution }}</p>
+        <p>{{ site.data.profile.institution }} ({{ site.data.profile.education_period }})</p>
       </div>
     </li>
     <li class="editorial-row">
-      <p class="entry-meta">{{ site.data.education.secondary_education.period }}</p>
       <div class="entry-body">
-        <h3>{{ site.data.education.secondary_education.institution }}</h3>
-        <p>{{ site.data.education.secondary_education.credential }}</p>
+        <h3>{{ site.data.education.secondary_education.credential }}</h3>
+        <p>{{ site.data.education.secondary_education.institution }} ({{ site.data.education.secondary_education.period }})</p>
       </div>
     </li>
   </ul>
