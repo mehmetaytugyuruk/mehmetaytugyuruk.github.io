@@ -1,12 +1,12 @@
 - label: Publications
   url: /publications/
   key: publications
-- label: Open Source
-  url: /open-source/
-  key: open-source
-- label: Education
-  url: /education/
-  key: education
+- label: Projects
+  url: /projects/
+  key: projects
+- label: Certificates
+  url: /certificates/
+  key: certificates
 - label: About
   url: /about/
   key: about

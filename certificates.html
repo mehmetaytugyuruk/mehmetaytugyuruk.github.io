@@ -1,0 +1,41 @@
+---
+layout: page
+title: Certificates
+eyebrow: Certificates
+description: Selected awards, competition distinctions, and conference participation certificates of Mehmet Aytuğ Yürük.
+intro: Selected records from research competitions and conference participation.
+nav_key: certificates
+permalink: /certificates/
+---
+<section class="editorial-section certificate-section" aria-labelledby="awards-title">
+  <h2 id="awards-title" class="section-label">Awards &amp; Competitions</h2>
+  <ul class="editorial-list certificate-list">
+    {% for item in site.data.education.awards %}
+      <li class="editorial-row">
+        <p class="entry-meta">{{ item.period }}</p>
+        <div class="entry-body">
+          <h3>{{ item.title }}</h3>
+          <p class="entry-result">{{ item.result }}</p>
+          <p>{{ item.detail }}</p>
+          <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="editorial-section certificate-section" id="conference-participation" aria-labelledby="conferences-title">
+  <h2 id="conferences-title" class="section-label">Conference Participation</h2>
+  <ul class="editorial-list certificate-list">
+    {% for item in site.data.education.conferences %}
+      <li class="editorial-row">
+        <p class="entry-meta">{{ item.date }}</p>
+        <div class="entry-body">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.detail }}</p>
+          <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

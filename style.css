@@ -709,7 +709,6 @@ h3 {
 }
 
 .editorial-list,
-.interest-list,
 .profile-directory,
 .items {
   padding: 0;
@@ -718,7 +717,6 @@ h3 {
 }
 
 .editorial-list,
-.interest-list,
 .profile-directory {
   border-top: 1px solid var(--hairline);
 }
@@ -771,8 +769,7 @@ h3 {
 }
 
 .entry-actions a,
-.profile-directory a,
-.cv-copy a {
+.profile-directory a {
   color: var(--accent);
   font-weight: 650;
   text-decoration-thickness: 1px;
@@ -788,9 +785,7 @@ h3 {
   margin-top: 1rem;
 }
 
-.about-prose p,
-.approach-copy,
-.cv-copy {
+.about-prose p {
   margin: 0;
   font-size: 0.91rem;
   line-height: 1.85;
@@ -804,24 +799,8 @@ h3 {
   font-weight: 620;
 }
 
-.interest-list li,
 .profile-directory li {
   border-bottom: 1px solid var(--hairline);
-}
-
-.interest-list li {
-  padding: 0.72rem 0;
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 430;
-  letter-spacing: -0.015em;
-}
-
-.approach-copy,
-.cv-copy {
-  max-width: 40rem;
-  margin-top: 1rem;
-  color: var(--muted);
 }
 
 .profile-directory li {
@@ -838,12 +817,6 @@ h3 {
 
 .profile-directory a {
   justify-self: start;
-}
-
-.about-context {
-  margin: 1rem 0 0;
-  color: var(--quiet);
-  font-size: 0.72rem;
 }
 
 .item {
