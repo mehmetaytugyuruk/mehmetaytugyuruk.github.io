@@ -383,10 +383,15 @@ h3 {
 }
 
 .selected-work-visual {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: var(--paper-deep);
+}
+
+.selected-work-visual:hover img {
+  opacity: 0.86;
 }
 
 .selected-work-visual img,

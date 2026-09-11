@@ -1,14 +1,14 @@
 {% if include.item.kind == "publication" %}
   {% assign publication = site.data.publications | where: "id", include.item.id | first %}
   {% assign study = site.data.research.studies | where: "publication_id", publication.id | first %}
-  {% assign publication_fragment = '/publications/#publication-' | append: publication.index %}
+  {% assign publication_primary_url = publication.doi | default: publication.code %}
   <article class="selected-work-row">
-    <div class="selected-work-visual">
+    <a class="selected-work-visual" href="{{ publication_primary_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open {{ publication.title | escape }}">
       <img src="{{ publication.image | relative_url }}" alt="{{ publication.image_alt | escape }}" width="1600" height="900" loading="lazy">
-    </div>
+    </a>
     <div class="selected-work-body">
       <p class="selected-work-meta">{{ publication.year }} · Research · {{ study.short_label }}</p>
-      <h3><a href="{{ publication_fragment | relative_url }}">{{ publication.title }}</a></h3>
+      <h3><a href="{{ publication_primary_url }}" target="_blank" rel="noopener noreferrer">{{ publication.title }} <span aria-hidden="true">↗</span></a></h3>
       <p class="selected-work-authors">
         {% for author in publication.authors %}{% if author.name == site.data.profile.name %}<strong>{{ author.display }}</strong>{% else %}{{ author.display }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}
       </p>
@@ -22,14 +22,14 @@
   </article>
 {% elsif include.item.kind == "project" %}
   {% assign project = site.data.software | where: "id", include.item.id | first %}
-  {% assign project_fragment = '/projects/#' | append: project.id %}
+  {% assign project_primary_link = project.links | first %}
   <article class="selected-work-row">
-    <div class="selected-work-visual">
+    <a class="selected-work-visual" href="{{ project_primary_link.url }}" target="_blank" rel="noopener noreferrer" aria-label="Open {{ project.name | escape }}">
       <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="1600" height="900" loading="lazy">
-    </div>
+    </a>
     <div class="selected-work-body">
       <p class="selected-work-meta">Project · {{ project.category }}</p>
-      <h3><a href="{{ project_fragment | relative_url }}">{{ project.name }}</a></h3>
+      <h3><a href="{{ project_primary_link.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }} <span aria-hidden="true">↗</span></a></h3>
       <p class="selected-work-context">{{ project.programming_language }} library · {{ project.release_label }}</p>
       <div class="selected-work-links" aria-label="Links for {{ project.name | escape }}">
         {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
