@@ -746,6 +746,11 @@ h3 {
   border-bottom: 1px solid var(--hairline);
 }
 
+.certificate-list .editorial-row {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+}
+
 .entry-meta {
   margin: 0.15rem 0 0;
   color: var(--quiet);

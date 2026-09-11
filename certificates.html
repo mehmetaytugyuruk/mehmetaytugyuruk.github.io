@@ -13,7 +13,6 @@ wide: true
   <ul class="editorial-list certificate-list">
     {% for item in site.data.education.awards %}
       <li class="editorial-row">
-        <p class="entry-meta">{{ item.period }}</p>
         <div class="entry-body">
           <h3>{{ item.title }}</h3>
           <p class="entry-result">{{ item.result }}</p>
@@ -30,7 +29,6 @@ wide: true
   <ul class="editorial-list certificate-list">
     {% for item in site.data.education.conferences %}
       <li class="editorial-row">
-        <p class="entry-meta">{{ item.date }}</p>
         <div class="entry-body">
           <h3>{{ item.title }}</h3>
           <p>{{ item.detail }}</p>
