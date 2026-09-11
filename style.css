@@ -322,9 +322,10 @@ h3 {
 }
 
 .profile-links a {
-  color: var(--ink);
-  font-size: 0.74rem;
-  font-weight: 650;
+  color: #111114;
+  font-size: 0.78rem;
+  font-weight: 720;
+  opacity: 1;
   text-decoration: none;
 }
 
