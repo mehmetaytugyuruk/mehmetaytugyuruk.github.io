@@ -1017,7 +1017,7 @@ h3 {
   }
 
   .hero-portrait {
-    width: min(21rem, 96vw, 100%);
+    width: clamp(11rem, 32vw, 15rem);
     justify-self: start;
     padding-top: 0;
   }
@@ -1062,6 +1062,10 @@ h3 {
 }
 
 @media (max-width: 520px) {
+  .hero-portrait {
+    width: min(10.5rem, 46vw);
+  }
+
   .selected-work-row,
   .publication-record,
   .software-record {
