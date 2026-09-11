@@ -1029,6 +1029,7 @@ h3 {
   .hero-portrait {
     width: clamp(11rem, 32vw, 15rem);
     justify-self: center;
+    order: -1;
     padding-top: 0;
   }
 
