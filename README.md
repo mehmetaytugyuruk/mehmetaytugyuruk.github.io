@@ -14,6 +14,8 @@ _config.yml             Site configuration
 _data/                  Profile, navigation, research, publication, and software data
 _includes/              Shared header and footer
 _layouts/               Shared HTML document and page layouts
+assets/css/             Site stylesheet
+assets/images/          Site, publication, and project imagery
 index.html               Homepage
 publications.html         Canonical publication record
 projects.html             Research-engineering and computer-vision projects

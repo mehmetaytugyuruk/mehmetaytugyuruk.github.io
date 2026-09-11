@@ -1,6 +1,9 @@
 - id: medlint
   name: medlint
+  image: /assets/images/projects/medlint.png
+  image_alt: medlint wordmark beside its split-integrity audit symbol.
   version: "0.1.1"
+  release_label: PyPI v0.1.1
   programming_language: Python
   category: Medical Imaging
   description: An actively developed Python library for auditing medical-imaging dataset splits. It detects cross-split file and DICOM-identifier relationships and reports structured evidence with explicit coverage boundaries for review.
@@ -14,7 +17,10 @@
 
 - id: biyoves
   name: biyoves
+  image: /assets/images/projects/biyoves.png
+  image_alt: BiyoVes workflow showing portrait detection and alignment followed by a four-photo print layout.
   version: "1.4.1"
+  release_label: PyPI v1.4.1
   programming_language: Python
   category: Applied Computer Vision
   description: A Python library and Web Studio for standards-based biometric, passport, and visa photo preparation, combining face alignment, portrait matting, format-specific crop geometry, automated quality preflight, and print-ready photo layouts.

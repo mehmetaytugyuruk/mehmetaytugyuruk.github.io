@@ -1,6 +1,8 @@
 {% assign publication = include.publication %}
 <article class="publication-record" id="publication-{{ publication.index }}">
-  <div class="publication-visual" aria-hidden="true"></div>
+  <div class="publication-visual">
+    <img src="{{ publication.image | relative_url }}" alt="{{ publication.image_alt | escape }}" width="1600" height="900" loading="lazy">
+  </div>
   <div class="publication-body">
     <p class="publication-meta">{{ publication.year }} · {{ publication.type }} · {{ publication.topic }}</p>
     <h3>{% if publication.doi %}<a href="{{ publication.doi }}" target="_blank" rel="noopener noreferrer">{{ publication.title }}</a>{% else %}{{ publication.title }}{% endif %}</h3>

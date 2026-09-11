@@ -38,7 +38,9 @@ nav_key: home
         {% assign publication = site.data.publications | where: "id", study.publication_id | first %}
         {% assign publication_fragment = '/publications/#publication-' | append: publication.index %}
         <article class="selected-work-row">
-          <div class="selected-work-visual" aria-hidden="true"></div>
+          <div class="selected-work-visual">
+            <img src="{{ publication.image | relative_url }}" alt="{{ publication.image_alt | escape }}" width="1600" height="900" loading="lazy">
+          </div>
           <div class="selected-work-body">
             <p class="selected-work-meta">{{ publication.year }} · Research · {{ study.short_label }}</p>
             <h3><a href="{{ publication_fragment | relative_url }}">{{ publication.title }}</a></h3>
@@ -58,11 +60,13 @@ nav_key: home
       {% for project in site.data.software %}
         {% assign project_fragment = '/projects/#' | append: project.id %}
         <article class="selected-work-row">
-          <div class="selected-work-visual" aria-hidden="true"></div>
+          <div class="selected-work-visual">
+            <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="1600" height="900" loading="lazy">
+          </div>
           <div class="selected-work-body">
             <p class="selected-work-meta">Project · {{ project.category }}</p>
             <h3><a href="{{ project_fragment | relative_url }}">{{ project.name }}</a></h3>
-            <p class="selected-work-context">{{ project.programming_language }} library · Version {{ project.version }}</p>
+            <p class="selected-work-context">{{ project.programming_language }} library · {{ project.release_label }}</p>
             <div class="selected-work-links" aria-label="Links for {{ project.name | escape }}">
               {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
             </div>

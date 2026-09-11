@@ -18,7 +18,7 @@
     <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
-    <meta property="og:image" content="{{ '/og-image.png' | absolute_url }}">
+    <meta property="og:image" content="{{ '/assets/images/site/og-image.png' | absolute_url }}">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="{{ site.data.profile.name }} — {{ site.data.profile.role }}">
@@ -28,18 +28,18 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{% if page.home %}{{ site.title }}{% else %}{{ meta_title }} — {{ site.title }}{% endif %}">
     <meta name="twitter:description" content="{{ page.description | default: site.description | escape }}">
-    <meta name="twitter:image" content="{{ '/og-image.png' | absolute_url }}">
+    <meta name="twitter:image" content="{{ '/assets/images/site/og-image.png' | absolute_url }}">
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16.png' | relative_url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32.png' | relative_url }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ '/favicon-192.png' | relative_url }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/site/favicon-16.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/site/favicon-32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/images/site/favicon-192.png' | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/site/apple-touch-icon.png' | relative_url }}">
     <meta name="theme-color" content="#F7F6F2">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 
     <script type="application/ld+json">
     {
