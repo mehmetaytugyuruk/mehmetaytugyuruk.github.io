@@ -273,10 +273,6 @@ h3 {
   justify-self: end;
   width: clamp(9.75rem, 11vw, 11.5rem);
   aspect-ratio: 1 / 1;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(24, 24, 24, 0.08);
-  border-radius: 0.15rem;
 }
 
 .portrait {
