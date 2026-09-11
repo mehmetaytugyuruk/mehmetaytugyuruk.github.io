@@ -262,7 +262,7 @@ h3 {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(11rem, 13.5rem);
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: clamp(2rem, 6vw, 5.5rem);
   align-items: center;
   min-height: clamp(32rem, 68vh, 44rem);
@@ -271,15 +271,19 @@ h3 {
 
 .hero-portrait {
   justify-self: end;
-  width: 100%;
+  width: clamp(9.75rem, 11vw, 11.5rem);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(24, 24, 24, 0.08);
+  border-radius: 0.15rem;
 }
 
 .portrait {
   display: block;
   width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  border-radius: 0.15rem;
+  height: 100%;
+  object-fit: contain;
   filter: grayscale(12%);
 }
 
@@ -1008,7 +1012,7 @@ h3 {
   }
 
   .hero-portrait {
-    width: min(13.5rem, 58vw);
+    width: min(10.5rem, 48vw);
     justify-self: start;
     padding-top: 0;
   }
