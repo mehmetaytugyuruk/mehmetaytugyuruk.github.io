@@ -12,13 +12,9 @@ nav_key: home
       <h1 id="hero-title">{{ site.data.profile.name }}</h1>
       <p class="hero-positioning">{{ site.data.profile.positioning }}</p>
       <p class="hero-context">{{ site.data.profile.education_context | escape }}</p>
-      <div class="text-actions" aria-label="Primary actions">
-        <a class="text-link text-link-strong" href="{{ '/publications/' | relative_url }}">View Publications</a>
-        <a class="text-link" href="{{ site.data.profile.cv | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
-      </div>
       <nav class="profile-links" aria-label="External profiles">
         {% for profile in site.data.profile.profiles %}
-          <a href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }}</a>
+          <a href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }} <span aria-hidden="true">↗</span></a>
         {% endfor %}
       </nav>
     </div>
