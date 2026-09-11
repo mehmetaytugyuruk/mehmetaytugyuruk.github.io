@@ -35,7 +35,8 @@ wide: true
 </p>
 
 <section class="software-list" aria-label="Projects">
-  {% for project in site.data.software %}
+  {% assign ordered_projects = site.data.software | sort: "display_order" %}
+  {% for project in ordered_projects %}
     {% assign github = project.links | where: "label", "GitHub" | first %}
     <article class="software-record" id="{{ project.id }}">
       <div class="software-visual">

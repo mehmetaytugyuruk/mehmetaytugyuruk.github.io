@@ -1,4 +1,5 @@
 - id: medlint
+  display_order: 1
   name: medlint
   image: /assets/images/projects/medlint.png
   image_alt: medlint wordmark beside its split-integrity audit symbol.
@@ -16,6 +17,7 @@
       url: https://pypi.org/project/medlint/
 
 - id: biyoves
+  display_order: 2
   name: biyoves
   image: /assets/images/projects/biyoves.png
   image_alt: BiyoVes workflow showing portrait detection and alignment followed by a four-photo print layout.
