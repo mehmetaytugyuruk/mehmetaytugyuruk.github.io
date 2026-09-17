@@ -42,7 +42,6 @@ wide: true
         <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="1600" height="900" loading="lazy">
       </div>
       <div class="software-record-body">
-        <p class="software-meta">Project · {{ project.category }}</p>
         <h2><a href="{{ github.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a></h2>
         <p class="software-context">{{ project.programming_language }} library · {{ project.release_label }}</p>
         <p class="software-summary">{{ project.description }}</p>

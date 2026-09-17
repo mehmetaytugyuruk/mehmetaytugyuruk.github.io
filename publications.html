@@ -42,21 +42,10 @@ wide: true
   <a class="text-link" href="{{ scholar.url | escape }}" target="_blank" rel="noopener noreferrer">Google Scholar profile</a>
 </p>
 
-{% assign published = site.data.publications | where: "status", "published" | sort: "display_order" %}
-{% assign under_review = site.data.publications | where: "status", "under_review" | sort: "display_order" %}
-
-<section class="publication-group" aria-labelledby="review-title">
-  <h2 id="review-title" class="section-label">Under Review</h2>
+<section class="publication-group" aria-label="Publications">
   <div class="publication-list">
-    {% for publication in under_review %}
-      {% include publication-entry.html publication=publication %}
-    {% endfor %}
-  </div>
-</section>
-<section class="publication-group" aria-labelledby="published-title">
-  <h2 id="published-title" class="section-label">Published</h2>
-  <div class="publication-list">
-    {% for publication in published %}
+    {% assign publications = site.data.publications | sort: "display_order" %}
+    {% for publication in publications %}
       {% include publication-entry.html publication=publication %}
     {% endfor %}
   </div>
