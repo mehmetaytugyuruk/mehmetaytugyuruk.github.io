@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mehmet Aytuğ Yürük
-description: Computer vision researcher working on medical imaging, reproducible deep learning, and research engineering.
+description: Computer vision and medical imaging, with a focus on applied AI, deep learning, and research engineering.
 home: true
 nav_key: home
 ---
@@ -9,7 +9,7 @@ nav_key: home
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy">
       <h1 id="hero-title">{{ site.data.profile.name }}</h1>
-      <p class="hero-positioning">{{ site.data.profile.positioning }}</p>
+      <p class="hero-positioning">{{ site.data.profile.role | escape }}<span class="hero-subpositioning">{{ site.data.profile.positioning | escape }}</span></p>
       <p class="hero-context">{{ site.data.profile.education_context | escape }}</p>
       <nav class="profile-links" aria-label="External profiles">
         {% for profile in site.data.profile.profiles %}

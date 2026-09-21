@@ -17,10 +17,10 @@ wide: true
     "@type": "SoftwareSourceCode",
     "@id": {{ project_fragment | absolute_url | jsonify }},
     "name": {{ project.name | jsonify }},
-    "description": {{ project.detail_description | jsonify }},
+    "description": {{ project.detail_description | default: project.description | jsonify }},
     "codeRepository": {{ github.url | jsonify }},
     "programmingLanguage": {{ project.programming_language | jsonify }},
-    "softwareVersion": {{ project.version | jsonify }},
+    {% if project.version %}"softwareVersion": {{ project.version | jsonify }},{% endif %}
     "url": {{ project_fragment | absolute_url | jsonify }},
     "sameAs": [{% for link in project.links %}{{ link.url | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}]
   }{% unless forloop.last %},{% endunless %}
@@ -43,7 +43,7 @@ wide: true
       </div>
       <div class="software-record-body">
         <h2><a href="{{ github.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a></h2>
-        <p class="software-context">{{ project.programming_language }} library · {{ project.release_label }}</p>
+        <p class="software-context">{% if project.context %}{{ project.context }}{% else %}{{ project.programming_language }} library · {{ project.release_label }}{% endif %}</p>
         <p class="software-summary">{{ project.description }}</p>
         <div class="inline-links" aria-label="{{ project.name }} links">
           {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}

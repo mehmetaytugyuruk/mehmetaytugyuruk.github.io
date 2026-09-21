@@ -1,14 +1,11 @@
 - kind: project
   id: medlint
 
-- kind: publication
-  id: retinal-colour
+- kind: project
+  id: rare26
 
 - kind: publication
   id: retinal-vit
 
 - kind: publication
   id: retinal-resnet
-
-- kind: project
-  id: biyoves

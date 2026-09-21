@@ -28,7 +28,8 @@
     </a>
     <div class="selected-work-body">
       <h3><a href="{{ project_primary_link.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a></h3>
-      <p class="selected-work-context">{{ project.programming_language }} library · {{ project.release_label }}</p>
+      <p class="selected-work-context">{% if project.context %}{{ project.context }}{% else %}{{ project.programming_language }} library · {{ project.release_label }}{% endif %}</p>
+      {% if project.homepage_description %}<p class="selected-work-context">{{ project.description }}</p>{% endif %}
       <div class="selected-work-links" aria-label="Links for {{ project.name | escape }}">
         {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
       </div>

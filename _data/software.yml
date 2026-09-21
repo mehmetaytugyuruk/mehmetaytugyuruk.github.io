@@ -16,8 +16,21 @@
     - label: PyPI
       url: https://pypi.org/project/medlint/
 
-- id: biyoves
+- id: rare26
   display_order: 2
+  name: MICCAI RARE26 — Medical Computer Vision Challenge
+  image: /assets/images/projects/rare26.svg
+  image_alt: RARE26 project graphic showing the ResNet-50 and ViT-S/16 model branches.
+  programming_language: Python
+  context: Medical computer vision challenge
+  description: Reproducible deep-learning pipeline for early neoplasia detection in Barrett’s oesophagus using ResNet-50 and ViT-S/16 models, grouped cross-validation, and ensemble methods.
+  homepage_description: true
+  links:
+    - label: GitHub
+      url: https://github.com/mehmetaytugyuruk/rare26
+
+- id: biyoves
+  display_order: 3
   name: biyoves
   image: /assets/images/projects/biyoves.png
   image_alt: BiyoVes workflow showing portrait detection and alignment followed by a four-photo print layout.

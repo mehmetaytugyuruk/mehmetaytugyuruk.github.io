@@ -310,6 +310,15 @@ h3 {
   line-height: 1.38;
 }
 
+.hero-subpositioning {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
 .hero-context {
   max-width: 38rem;
   margin: 0.65rem 0 0;
