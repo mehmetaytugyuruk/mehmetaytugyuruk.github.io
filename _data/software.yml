@@ -20,7 +20,7 @@
   display_order: 2
   name: MICCAI RARE26 — Medical Computer Vision Challenge
   image: /assets/images/projects/rare26.svg
-  image_alt: RARE26 project graphic showing the ResNet-50 and ViT-S/16 model branches.
+  image_alt: Light-theme RARE26 flowchart showing endoscopy images, ResNet-50 and ViT-S/16 branches, and a 54-checkpoint ensemble.
   programming_language: Python
   context: Medical computer vision challenge
   description: Reproducible deep-learning pipeline for early neoplasia detection in Barrett’s oesophagus using ResNet-50 and ViT-S/16 models, grouped cross-validation, and ensemble methods.
