@@ -1,7 +1,7 @@
 {% assign publication = include.publication %}
 <article class="publication-record" id="publication-{{ publication.index }}">
   <div class="publication-visual">
-    <img src="{{ publication.image | relative_url }}" alt="{{ publication.image_alt | escape }}" width="1600" height="900" loading="lazy">
+    <img src="{{ publication.image | relative_url }}" alt="{{ publication.image_alt | escape }}" width="{{ publication.image_width | default: 1600 }}" height="{{ publication.image_height | default: 900 }}" loading="lazy">
   </div>
   <div class="publication-body">
     {% if publication.website %}

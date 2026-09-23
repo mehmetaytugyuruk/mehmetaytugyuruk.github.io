@@ -3,6 +3,8 @@
   index: "01"
   image: /assets/images/publications/retinal-resnet-age-prediction.png
   image_alt: Retinal fundus preprocessing examples showing the crop, original image, and Graham-filtered image.
+  image_width: 1494
+  image_height: 472
   title: Age Prediction and Categorization from Retinal Fundus Images Using Residual Neural Networks
   authors:
     - name: Mehmet Aytuğ Yürük
@@ -30,6 +32,8 @@
   index: "02"
   image: /assets/images/publications/retinal-vit-age-prediction.png
   image_alt: Vision Transformer pipeline for retinal age regression and age categorisation.
+  image_width: 1490
+  image_height: 572
   title: "Decoding Chronological Age from the Retinal Fundus Images: A Deep Learning-based Analysis with Vision Transformers"
   authors:
     - name: Mehmet Aytuğ Yürük
@@ -57,6 +61,8 @@
   index: "03"
   image: /assets/images/publications/retinal-color-spaces-age-prediction.png
   image_alt: Retinal age-prediction workflow comparing RGB, grayscale, LAB, HSV, and YCrCb representations with single, ensemble, and fusion models.
+  image_width: 1397
+  image_height: 810
   title: Exploring the Impact of Alternative Color Spaces in Deep Retinal Age Prediction from Fundus Images
   authors:
     - name: Mehmet Aytuğ Yürük
