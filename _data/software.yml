@@ -36,10 +36,10 @@
 - id: biyoves
   display_order: 3
   name: biyoves
-  image: /assets/images/projects/biyoves.png
-  image_alt: BiyoVes workflow showing portrait detection and alignment followed by a four-photo print layout.
-  image_width: 1411
-  image_height: 687
+  image: /assets/images/projects/biyoves.webp
+  image_alt: BiyoVes showcase showing synthetic portrait inputs and processed portrait outputs.
+  image_width: 1920
+  image_height: 1194
   version: "1.4.1"
   release_label: PyPI v1.4.1
   programming_language: Python
