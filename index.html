@@ -24,9 +24,9 @@ nav_key: home
         </div>
         <nav class="hero-links" aria-label="External profiles">
           {% for profile in site.data.profile.profiles %}
-            <a class="social-link" href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }} <span aria-hidden="true">↗</span></a>
+            <a class="social-link" href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }}</a>
           {% endfor %}
-          <a class="social-link" href="{{ site.data.profile.cv | relative_url }}" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
+          <a class="social-link" href="{{ site.data.profile.cv | relative_url }}" target="_blank" rel="noopener noreferrer">CV</a>
         </nav>
         <p class="hero-bio">{{ site.data.profile.bio | escape }}</p>
       </div>
@@ -97,8 +97,8 @@ nav_key: home
               <p class="software-context">{% if project.context %}{{ project.context }}{% else %}{{ project.programming_language }} library · {{ project.release_label }}{% endif %}</p>
               <p class="software-summary">{{ project.description }}</p>
               <div class="inline-links" aria-label="{{ project.name }} links">
-                {% if project.website %}<a href="{{ project.website }}" target="_blank" rel="noopener noreferrer">Website <span aria-hidden="true">↗</span></a>{% endif %}
-                {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
+                {% if project.website %}<a href="{{ project.website }}" target="_blank" rel="noopener noreferrer">Website</a>{% endif %}
+                {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>{% endfor %}
               </div>
             </div>
           </article>
@@ -143,7 +143,7 @@ nav_key: home
             <div class="entry-body">
               <h3>{{ item.title }}</h3>
               <p>{{ item.detail }}</p>
-              <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
+              <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }}</a></p>
             </div>
           </li>
         {% endfor %}
@@ -152,7 +152,7 @@ nav_key: home
             <div class="entry-body">
               <h3>{{ item.title }}</h3>
               <p>{{ item.detail }}</p>
-              <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
+              <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }}</a></p>
             </div>
           </li>
         {% endfor %}
