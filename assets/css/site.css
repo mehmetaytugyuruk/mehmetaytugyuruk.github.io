@@ -478,26 +478,9 @@ h3 {
   color: var(--muted);
 }
 
-.site-footer {
-  display: flex;
-  width: min(calc(100% - 3rem), var(--shell));
-  justify-content: space-between;
-  gap: 1rem 2rem;
-  margin: 0 auto;
-  padding: 2.5rem 0;
-  border-top: 1px solid var(--rule);
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.site-footer p {
-  margin: 0;
-}
-
 @media (max-width: 760px) {
   .container,
-  .page-main,
-  .site-footer {
+  .page-main {
     width: min(calc(100% - 2rem), var(--shell));
   }
 
@@ -560,9 +543,6 @@ h3 {
     text-align: left;
   }
 
-  .site-footer {
-    flex-direction: column;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -584,8 +564,7 @@ h3 {
   }
 
   .container,
-  .page-main,
-  .site-footer {
+  .page-main {
     width: 100%;
   }
 }
