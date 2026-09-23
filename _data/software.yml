@@ -19,7 +19,7 @@
       url: https://pypi.org/project/medlint/
 
 - id: rare26
-  display_order: 2
+  display_order: 3
   name: MICCAI RARE26 — Medical Computer Vision Challenge
   image: /assets/images/projects/rare26.png
   image_alt: RARE26 endoscopy image triptych showing Barrett’s oesophagus findings and a biopsy site.
@@ -34,7 +34,7 @@
       url: https://github.com/mehmetaytugyuruk/rare26
 
 - id: biyoves
-  display_order: 3
+  display_order: 2
   name: biyoves
   image: /assets/images/projects/biyoves.webp
   image_alt: BiyoVes showcase showing synthetic portrait inputs and processed portrait outputs.
