@@ -19,7 +19,6 @@ nav_key: home
       <div class="hero-info">
         <h1 id="hero-title" class="hero-name">{{ site.data.profile.name }}</h1>
         <p class="hero-title">{{ site.data.profile.role | escape }}</p>
-        <p class="hero-affiliation"><a href="https://www.istanbul.edu.tr/" target="_blank" rel="noopener noreferrer">{{ site.data.profile.institution }}</a></p>
         <p class="hero-email"><a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></p>
       </div>
       <nav class="hero-links" aria-label="External profiles">
@@ -102,18 +101,18 @@ nav_key: home
     </header>
     <ul class="editorial-list education-list">
       <li class="editorial-row">
-        <div class="entry-meta">{{ site.data.profile.education_period }}</div>
         <div class="entry-body">
           <h3>{{ site.data.profile.degree }}</h3>
           <p><a href="https://www.istanbul.edu.tr/" target="_blank" rel="noopener noreferrer">{{ site.data.profile.institution }}</a></p>
         </div>
+        <div class="entry-meta">{{ site.data.profile.education_period }}</div>
       </li>
       <li class="editorial-row">
-        <div class="entry-meta">{{ site.data.education.secondary_education.period }}</div>
         <div class="entry-body">
           <h3>{{ site.data.education.secondary_education.credential }}</h3>
           <p>{{ site.data.education.secondary_education.institution }}</p>
         </div>
+        <div class="entry-meta">{{ site.data.education.secondary_education.period }}</div>
       </li>
     </ul>
   </section>
@@ -123,36 +122,25 @@ nav_key: home
       <h2 id="certificates-title">Certificates</h2>
     </header>
 
-    <div class="certificate-groups">
-      <section class="certificate-group" aria-labelledby="awards-title">
-        <h3 id="awards-title" class="section-label">Awards &amp; Competitions</h3>
-        <ul class="editorial-list certificate-list">
-          {% for item in site.data.education.awards %}
-            <li class="editorial-row">
-              <div class="entry-body">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.detail }}</p>
-                <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-
-      <section class="certificate-group" aria-labelledby="conferences-title">
-        <h3 id="conferences-title" class="section-label">Conference Participation</h3>
-        <ul class="editorial-list certificate-list">
-          {% for item in site.data.education.conferences %}
-            <li class="editorial-row">
-              <div class="entry-body">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.detail }}</p>
-                <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
-              </div>
-            </li>
-          {% endfor %}
-        </ul>
-      </section>
-    </div>
+    <ul class="editorial-list certificate-list">
+      {% for item in site.data.education.awards %}
+        <li class="editorial-row">
+          <div class="entry-body">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.detail }}</p>
+            <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
+          </div>
+        </li>
+      {% endfor %}
+      {% for item in site.data.education.conferences %}
+        <li class="editorial-row">
+          <div class="entry-body">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.detail }}</p>
+            <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
   </section>
 </main>
