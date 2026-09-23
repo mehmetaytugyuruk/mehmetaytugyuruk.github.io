@@ -90,7 +90,7 @@ nav_key: home
           {% endif %}
           <article class="software-record" id="{{ project.id }}">
             <div class="software-visual">
-              <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="1600" height="900" loading="lazy">
+              <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="{{ project.image_width | default: 1600 }}" height="{{ project.image_height | default: 900 }}" loading="lazy">
             </div>
             <div class="software-record-body">
               <h3><a href="{{ project_url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a></h3>
@@ -116,7 +116,7 @@ nav_key: home
         <li class="editorial-row">
           <div class="entry-body">
             <h3>{{ site.data.profile.degree }}</h3>
-            <p><a href="https://www.istanbul.edu.tr/" target="_blank" rel="noopener noreferrer">{{ site.data.profile.institution }}</a></p>
+            <p>{{ site.data.profile.institution }}</p>
           </div>
           <div class="entry-meta">{{ site.data.profile.education_period }}</div>
         </li>

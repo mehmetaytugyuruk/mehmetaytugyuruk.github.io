@@ -3,6 +3,8 @@
   name: medlint
   image: /assets/images/projects/medlint.png
   image_alt: medlint wordmark beside its split-integrity audit symbol.
+  image_width: 1380
+  image_height: 431
   version: "0.1.1"
   release_label: PyPI v0.1.1
   programming_language: Python
@@ -21,6 +23,8 @@
   name: MICCAI RARE26 — Medical Computer Vision Challenge
   image: /assets/images/projects/rare26.svg
   image_alt: Light-theme RARE26 flowchart showing endoscopy images, ResNet-50 and ViT-S/16 branches, and a 54-checkpoint ensemble.
+  image_width: 1410
+  image_height: 680
   programming_language: Python
   context: Medical computer vision challenge
   description: Reproducible deep-learning pipeline for early neoplasia detection in Barrett’s oesophagus using ResNet-50 and ViT-S/16 models, grouped cross-validation, and ensemble methods.
@@ -34,6 +38,8 @@
   name: biyoves
   image: /assets/images/projects/biyoves.png
   image_alt: BiyoVes workflow showing portrait detection and alignment followed by a four-photo print layout.
+  image_width: 1411
+  image_height: 687
   version: "1.4.1"
   release_label: PyPI v1.4.1
   programming_language: Python
