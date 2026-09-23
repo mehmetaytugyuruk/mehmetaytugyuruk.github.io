@@ -59,11 +59,9 @@ nav_key: home
   ]
   </script>
 
-  {% assign scholar = site.data.profile.profiles | where: "label", "Scholar" | first %}
   <section id="publications" class="home-section" aria-labelledby="publications-title">
     <header class="home-section-heading">
       <h2 id="publications-title">Publications</h2>
-      <a class="text-link" href="{{ scholar.url | escape }}" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
     </header>
     <div class="publication-list">
       {% assign publications = site.data.publications | sort: "display_order" %}
@@ -76,8 +74,6 @@ nav_key: home
   <section id="projects" class="home-section" aria-labelledby="projects-title">
     <header class="home-section-heading">
       <h2 id="projects-title">Projects</h2>
-      {% assign github_profile = site.data.profile.profiles | where: "label", "GitHub" | first %}
-      <a class="text-link" href="{{ github_profile.url | escape }}" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
     </header>
     <div class="software-list">
       {% assign ordered_projects = site.data.software | sort: "display_order" %}
