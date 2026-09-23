@@ -45,5 +45,4 @@
       url: https://github.com/mehmetaytugyuruk/biyoves
     - label: PyPI
       url: https://pypi.org/project/biyoves/
-    - label: Web Studio
-      url: https://mehmetaytugyuruk.github.io/biyoves/
+  website: https://mehmetaytugyuruk.github.io/biyoves/

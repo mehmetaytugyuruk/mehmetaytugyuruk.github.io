@@ -3,31 +3,33 @@ layout: default
 title: Mehmet Aytuğ Yürük
 description: Computer vision and medical imaging, with a focus on applied AI, deep learning, and research engineering.
 home: true
-nav_key: home
+  nav_key: home
 ---
 <main id="main-content" class="home-main">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-card">
-      <div class="hero-portrait">
-        <img
-          class="hero-photo"
-          src="{{ site.data.profile.portrait | relative_url }}"
-          alt="{{ site.data.profile.portrait_alt }}"
-          width="576"
-          height="576">
+    <div class="container narrow">
+      <div class="hero-card">
+        <div class="hero-portrait">
+          <img
+            class="hero-photo"
+            src="{{ site.data.profile.portrait | relative_url }}"
+            alt="{{ site.data.profile.portrait_alt }}"
+            width="576"
+            height="576">
+        </div>
+        <div class="hero-info">
+          <h1 id="hero-title" class="hero-name">{{ site.data.profile.name }}</h1>
+          <p class="hero-title">{{ site.data.profile.role | escape }}</p>
+          <p class="hero-email"><a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></p>
+        </div>
+        <nav class="hero-links" aria-label="External profiles">
+          {% for profile in site.data.profile.profiles %}
+            <a class="social-link" href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }} <span aria-hidden="true">↗</span></a>
+          {% endfor %}
+          <a class="social-link" href="{{ site.data.profile.cv | relative_url }}" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
+        </nav>
+        <p class="hero-bio">{{ site.data.profile.bio | escape }}</p>
       </div>
-      <div class="hero-info">
-        <h1 id="hero-title" class="hero-name">{{ site.data.profile.name }}</h1>
-        <p class="hero-title">{{ site.data.profile.role | escape }}</p>
-        <p class="hero-email"><a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></p>
-      </div>
-      <nav class="hero-links" aria-label="External profiles">
-        {% for profile in site.data.profile.profiles %}
-          <a class="social-link" href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }} <span aria-hidden="true">↗</span></a>
-        {% endfor %}
-        <a class="social-link" href="{{ site.data.profile.cv | relative_url }}" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
-      </nav>
-      <p class="hero-bio">{{ site.data.profile.bio | escape }}</p>
     </div>
   </section>
 
@@ -59,88 +61,102 @@ nav_key: home
   </script>
 
   <section id="publications" class="home-section" aria-labelledby="publications-title">
-    <header class="home-section-heading">
-      <h2 id="publications-title">Publications</h2>
-    </header>
-    <div class="publication-list">
-      {% assign publications = site.data.publications | sort: "display_order" %}
-      {% for publication in publications %}
-        {% include publication-entry.html publication=publication %}
-      {% endfor %}
+    <div class="container">
+      <header class="home-section-heading">
+        <h2 id="publications-title">Publications</h2>
+      </header>
+      <div class="publication-list">
+        {% assign publications = site.data.publications | sort: "display_order" %}
+        {% for publication in publications %}
+          {% include publication-entry.html publication=publication %}
+        {% endfor %}
+      </div>
     </div>
   </section>
 
-  <section id="projects" class="home-section" aria-labelledby="projects-title">
-    <header class="home-section-heading">
-      <h2 id="projects-title">Projects</h2>
-    </header>
-    <div class="software-list">
-      {% assign ordered_projects = site.data.software | sort: "display_order" %}
-      {% for project in ordered_projects %}
-        {% assign github = project.links | where: "label", "GitHub" | first %}
-        <article class="software-record" id="{{ project.id }}">
-          <div class="software-visual">
-            <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="1600" height="900" loading="lazy">
-          </div>
-          <div class="software-record-body">
-            <h3><a href="{{ github.url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a></h3>
-            <p class="software-context">{% if project.context %}{{ project.context }}{% else %}{{ project.programming_language }} library · {{ project.release_label }}{% endif %}</p>
-            <p class="software-summary">{{ project.description }}</p>
-            <div class="inline-links" aria-label="{{ project.name }} links">
-              {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
+  <section id="projects" class="home-section shaded" aria-labelledby="projects-title">
+    <div class="container">
+      <header class="home-section-heading">
+        <h2 id="projects-title">Projects</h2>
+      </header>
+      <div class="software-list">
+        {% assign ordered_projects = site.data.software | sort: "display_order" %}
+        {% for project in ordered_projects %}
+          {% assign github = project.links | where: "label", "GitHub" | first %}
+          {% if project.website %}
+            {% assign project_url = project.website %}
+          {% else %}
+            {% assign project_url = github.url %}
+          {% endif %}
+          <article class="software-record" id="{{ project.id }}">
+            <div class="software-visual">
+              <img src="{{ project.image | relative_url }}" alt="{{ project.image_alt | escape }}" width="1600" height="900" loading="lazy">
             </div>
-          </div>
-        </article>
-      {% endfor %}
+            <div class="software-record-body">
+              <h3><a href="{{ project_url }}" target="_blank" rel="noopener noreferrer">{{ project.name }}</a></h3>
+              <p class="software-context">{% if project.context %}{{ project.context }}{% else %}{{ project.programming_language }} library · {{ project.release_label }}{% endif %}</p>
+              <p class="software-summary">{{ project.description }}</p>
+              <div class="inline-links" aria-label="{{ project.name }} links">
+                {% if project.website %}<a href="{{ project.website }}" target="_blank" rel="noopener noreferrer">Website <span aria-hidden="true">↗</span></a>{% endif %}
+                {% for link in project.links %}<a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span aria-hidden="true">↗</span></a>{% endfor %}
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
     </div>
   </section>
 
   <section id="education" class="home-section" aria-labelledby="education-title">
-    <header class="home-section-heading">
-      <h2 id="education-title">Education</h2>
-    </header>
-    <ul class="editorial-list education-list">
-      <li class="editorial-row">
-        <div class="entry-body">
-          <h3>{{ site.data.profile.degree }}</h3>
-          <p><a href="https://www.istanbul.edu.tr/" target="_blank" rel="noopener noreferrer">{{ site.data.profile.institution }}</a></p>
-        </div>
-        <div class="entry-meta">{{ site.data.profile.education_period }}</div>
-      </li>
-      <li class="editorial-row">
-        <div class="entry-body">
-          <h3>{{ site.data.education.secondary_education.credential }}</h3>
-          <p>{{ site.data.education.secondary_education.institution }}</p>
-        </div>
-        <div class="entry-meta">{{ site.data.education.secondary_education.period }}</div>
-      </li>
-    </ul>
+    <div class="container">
+      <header class="home-section-heading">
+        <h2 id="education-title">Education</h2>
+      </header>
+      <ul class="editorial-list education-list">
+        <li class="editorial-row">
+          <div class="entry-body">
+            <h3>{{ site.data.profile.degree }}</h3>
+            <p><a href="https://www.istanbul.edu.tr/" target="_blank" rel="noopener noreferrer">{{ site.data.profile.institution }}</a></p>
+          </div>
+          <div class="entry-meta">{{ site.data.profile.education_period }}</div>
+        </li>
+        <li class="editorial-row">
+          <div class="entry-body">
+            <h3>{{ site.data.education.secondary_education.credential }}</h3>
+            <p>{{ site.data.education.secondary_education.institution }}</p>
+          </div>
+          <div class="entry-meta">{{ site.data.education.secondary_education.period }}</div>
+        </li>
+      </ul>
+    </div>
   </section>
 
-  <section id="certificates" class="home-section" aria-labelledby="certificates-title">
-    <header class="home-section-heading">
-      <h2 id="certificates-title">Certificates</h2>
-    </header>
+  <section id="certificates" class="home-section shaded" aria-labelledby="certificates-title">
+    <div class="container">
+      <header class="home-section-heading">
+        <h2 id="certificates-title">Certificates</h2>
+      </header>
 
-    <ul class="editorial-list certificate-list">
-      {% for item in site.data.education.awards %}
-        <li class="editorial-row">
-          <div class="entry-body">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.detail }}</p>
-            <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
-          </div>
-        </li>
-      {% endfor %}
-      {% for item in site.data.education.conferences %}
-        <li class="editorial-row">
-          <div class="entry-body">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.detail }}</p>
-            <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
+      <ul class="editorial-list certificate-list">
+        {% for item in site.data.education.awards %}
+          <li class="editorial-row">
+            <div class="entry-body">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.detail }}</p>
+              <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
+            </div>
+          </li>
+        {% endfor %}
+        {% for item in site.data.education.conferences %}
+          <li class="editorial-row">
+            <div class="entry-body">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.detail }}</p>
+              <p class="entry-actions"><a href="{{ item.certificate_url | relative_url }}" target="_blank" rel="noopener noreferrer">{{ item.certificate_label }} ↗</a></p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </section>
 </main>
