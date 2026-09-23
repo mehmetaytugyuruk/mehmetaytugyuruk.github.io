@@ -10,16 +10,6 @@ permalink: /sitemap.xml
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  {% for item in site.data.navigation %}
-    {% unless item.external %}
-  <url>
-    <loc>{{ item.url | absolute_url }}</loc>
-    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-    {% endunless %}
-  {% endfor %}
   <url>
     <loc>{{ site.data.profile.cv | absolute_url }}</loc>
     <changefreq>yearly</changefreq>

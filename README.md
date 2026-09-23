@@ -11,23 +11,23 @@ The site uses the native Jekyll support provided by GitHub Pages:
 
 ```text
 _config.yml             Site configuration
-_data/                  Profile, navigation, research, publication, and software data
-_includes/              Shared header and footer
+_data/                  Profile, research, publication, and software data
+_includes/              Shared publication and footer partials
 _layouts/               Shared HTML document and page layouts
 assets/css/             Site stylesheet
 assets/images/          Site, publication, and project imagery
 index.html               Homepage
-publications.html         Canonical publication record
-projects.html             Research-engineering and computer-vision projects
-certificates.html         Awards, competitions, and conference certificates
-about.html                Concise profile, education, and selected links
-open-source.html          Redirect to the canonical Projects route
-education.html            Academic background and education history
+publications.html         Redirect to the Publications section on the home page
+projects.html             Redirect to the Projects section on the home page
+certificates.html         Redirect to the Certificates section on the home page
+about.html                Redirect to the home page
+open-source.html          Redirect to the Projects section on the home page
+education.html            Redirect to the Education section on the home page
 pages/                    Legacy route redirects
 ```
 
-Publication facts and links are stored in `_data/publications.yml`; the Home
-and Publications views read from that source.
+Publication facts and links are stored in `_data/publications.yml`; the home
+page reads from that source.
 
 ## Local development
 
@@ -43,7 +43,7 @@ animated background process.
 
 ## Route compatibility
 
-The canonical content routes are `/publications/`, `/projects/`,
-`/education/`, `/certificates/`, and `/about/`. The former `/open-source/`
-and `/pages/.../` URLs remain as native HTML meta-refresh redirects with
-canonical tags and visible fallback links.
+The home page is the canonical one-page site. The former content routes
+`/publications/`, `/projects/`, `/education/`, `/certificates/`, and `/about/`
+remain as native HTML meta-refresh redirects to their corresponding home-page
+sections. Legacy `/open-source/` and `/pages/.../` URLs remain compatible too.
