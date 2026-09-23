@@ -22,7 +22,7 @@ projects.html             Research-engineering and computer-vision projects
 certificates.html         Awards, competitions, and conference certificates
 about.html                Concise profile, education, and selected links
 open-source.html          Redirect to the canonical Projects route
-education.html            Redirect to Education within About
+education.html            Academic background and education history
 pages/                    Legacy route redirects
 ```
 
@@ -44,6 +44,6 @@ animated background process.
 ## Route compatibility
 
 The canonical content routes are `/publications/`, `/projects/`,
-`/certificates/`, and `/about/`. The former `/open-source/`, `/education/`,
+`/education/`, `/certificates/`, and `/about/`. The former `/open-source/`
 and `/pages/.../` URLs remain as native HTML meta-refresh redirects with
 canonical tags and visible fallback links.

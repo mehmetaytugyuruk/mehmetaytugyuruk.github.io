@@ -4,6 +4,9 @@
 - label: Projects
   url: /projects/
   key: projects
+- label: Education
+  url: /education/
+  key: education
 - label: Certificates
   url: /certificates/
   key: certificates

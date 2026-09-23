@@ -23,10 +23,7 @@ wide: true
     {% if publication.date_published %}"datePublished": {{ publication.date_published | jsonify }},{% endif %}
     {% if publication.doi %}"identifier": {{ publication.doi | jsonify }},
     "sameAs": {{ publication.doi | jsonify }},{% endif %}
-    "isPartOf": {
-      "@type": "CreativeWork",
-      "name": {{ publication.venue | jsonify }}
-    },
+    "description": {{ publication.contribution | jsonify }},
     "url": {{ record_fragment | absolute_url | jsonify }},
     "hasPart": [
       { "@type": "SoftwareSourceCode", "name": "Source code", "url": {{ publication.code | jsonify }} },

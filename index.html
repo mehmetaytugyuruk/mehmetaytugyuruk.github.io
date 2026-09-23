@@ -7,23 +7,28 @@ nav_key: home
 ---
 <main id="main-content" class="home-main">
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-copy">
-      <h1 id="hero-title">{{ site.data.profile.name }}</h1>
-      <p class="hero-positioning">{{ site.data.profile.role | escape }}<span class="hero-subpositioning">{{ site.data.profile.positioning | escape }}</span></p>
-      <p class="hero-context">{{ site.data.profile.education_context | escape }}</p>
-      <nav class="profile-links" aria-label="External profiles">
+    <div class="hero-card">
+      <div class="hero-portrait">
+        <img
+          class="hero-photo"
+          src="{{ site.data.profile.portrait | relative_url }}"
+          alt="{{ site.data.profile.portrait_alt }}"
+          width="576"
+          height="576">
+      </div>
+      <div class="hero-info">
+        <h1 id="hero-title" class="hero-name">{{ site.data.profile.name }}</h1>
+        <p class="hero-title">{{ site.data.profile.role | escape }}</p>
+        <p class="hero-affiliation"><a href="https://www.istanbul.edu.tr/" target="_blank" rel="noopener noreferrer">{{ site.data.profile.institution }}</a></p>
+        <p class="hero-email"><a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></p>
+      </div>
+      <nav class="hero-links" aria-label="External profiles">
         {% for profile in site.data.profile.profiles %}
-          <a href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }} <span aria-hidden="true">↗</span></a>
+          <a class="social-link" href="{{ profile.url | escape }}"{% if profile.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ profile.label }} <span aria-hidden="true">↗</span></a>
         {% endfor %}
+        <a class="social-link" href="{{ site.data.profile.cv | relative_url }}" target="_blank" rel="noopener noreferrer">CV <span aria-hidden="true">↗</span></a>
       </nav>
-    </div>
-    <div class="hero-portrait">
-      <img
-        class="portrait"
-        src="{{ site.data.profile.portrait | relative_url }}"
-        alt="{{ site.data.profile.portrait_alt }}"
-        width="576"
-        height="576">
+      <p class="hero-bio">{{ site.data.profile.bio | escape }}</p>
     </div>
   </section>
 
