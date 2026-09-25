@@ -20,16 +20,6 @@
   text-align: center;
 }
 
-.bv-eyebrow {
-  margin: 0 0 0.8rem;
-  color: var(--muted);
-  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
 .bv-hero h1 {
   margin: 0;
   color: var(--ink);
@@ -51,19 +41,15 @@
   text-wrap: balance;
 }
 
-.bv-intro {
-  max-width: 700px;
-  margin: 1rem auto 0;
-  color: var(--muted);
-  font-size: 1.04rem;
-  line-height: 1.75;
-}
-
-.bv-resource-links {
+.bv-resource-links,
+.bv-footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.7rem;
+}
+
+.bv-resource-links {
   margin-top: 1.65rem;
 }
 
@@ -72,7 +58,6 @@
   min-height: 44px;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem;
   padding: 0.52rem 1.1rem;
   border: 1px solid var(--ink);
   border-radius: 999px;
@@ -91,11 +76,6 @@
   color: #fff;
   background: #202020;
   text-decoration: none;
-}
-
-.bv-resource-link svg {
-  width: 1.05rem;
-  height: 1.05rem;
 }
 
 .bv-teaser {
@@ -167,19 +147,12 @@
   line-height: 1.8;
 }
 
-.bv-section-intro {
-  max-width: 760px;
-  margin: 0.7rem auto 2rem;
-  color: var(--muted);
-  text-align: center;
-}
-
 .bv-facts,
 .bv-dataset-facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.25rem;
-  margin-top: 2.2rem;
+  margin-top: 2rem;
   border-top: 1px solid var(--rule);
   border-bottom: 1px solid var(--rule);
 }
@@ -187,7 +160,7 @@
 .bv-facts > div,
 .bv-dataset-facts > div {
   display: flex;
-  min-height: 112px;
+  min-height: 104px;
   flex-direction: column;
   justify-content: center;
   padding: 1rem 0.25rem;
@@ -198,7 +171,7 @@
 .bv-dataset-facts strong {
   color: var(--ink);
   font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   font-weight: 700;
   line-height: 1.25;
   font-variant-numeric: tabular-nums;
@@ -212,90 +185,8 @@
   line-height: 1.45;
 }
 
-.bv-method-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.bv-method-grid article {
-  padding-top: 1rem;
-  border-top: 2px solid var(--rule);
-}
-
-.bv-step {
-  color: var(--link);
-  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-}
-
-.bv-method-grid h3,
-.bv-preset-copy h3 {
-  margin: 0.55rem 0 0.45rem;
-  color: var(--ink);
-  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  line-height: 1.35;
-}
-
-.bv-method-grid p,
-.bv-preset-copy p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-.bv-analysis {
-  max-width: 960px;
-  margin-inline: auto;
-}
-
-.bv-analysis img {
-  background: #fff;
-}
-
 .bv-gallery {
   margin-top: 2rem;
-}
-
-.bv-gallery img {
-  background: #fff;
-}
-
-.bv-preset-copy {
-  max-width: 760px;
-  margin: 3.25rem auto 0;
-  text-align: center;
-}
-
-.bv-note,
-.bv-dataset-note {
-  padding: 1rem 1.2rem;
-  margin: 1.3rem 0 0;
-  border-left: 3px solid var(--link);
-  color: var(--muted);
-  background: #fff;
-  font-size: 0.93rem;
-  line-height: 1.65;
-}
-
-.bv-dataset-facts {
-  margin-top: 1.8rem;
-}
-
-.bv-dataset-facts strong {
-  font-size: 1.5rem;
-}
-
-.bv-dataset-note {
-  background: transparent;
 }
 
 .bv-centered {
@@ -335,8 +226,14 @@
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-.biyoves-page p code,
-.bv-lead code {
+.bv-start-note {
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.bv-start-note code {
   padding: 0.1em 0.34em;
   border-radius: 0.2em;
   background: #eee;
@@ -353,9 +250,6 @@
 }
 
 .bv-footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem 1.3rem;
   margin-top: 0.75rem;
 }
@@ -378,16 +272,6 @@
     padding-bottom: 2.4rem;
   }
 
-  .bv-method-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
-
-  .bv-method-grid article {
-    padding-top: 0.8rem;
-  }
-
   .bv-facts,
   .bv-dataset-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -405,11 +289,6 @@
     width: min(calc(100% - 1.5rem), var(--bv-shell));
   }
 
-  .bv-intro,
-  .bv-lead {
-    font-size: 0.98rem;
-  }
-
   .bv-resource-links {
     gap: 0.5rem;
   }
@@ -424,12 +303,9 @@
     padding-block: 2.75rem;
   }
 
-  .bv-facts strong {
-    font-size: 1.15rem;
-  }
-
+  .bv-facts strong,
   .bv-dataset-facts strong {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .biyoves-page pre {
