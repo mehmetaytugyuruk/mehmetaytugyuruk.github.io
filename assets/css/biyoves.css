@@ -13,6 +13,7 @@
 
 .bv-container-narrow {
   max-width: var(--bv-narrow);
+  margin-inline: auto;
 }
 
 .bv-hero {
