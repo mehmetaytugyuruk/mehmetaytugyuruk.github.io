@@ -11,6 +11,12 @@ permalink: /sitemap.xml
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>{{ '/biyoves/' | absolute_url }}</loc>
+    <lastmod>{{ site.time | date: '%Y-%m-%d' }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>{{ site.data.profile.cv | absolute_url }}</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

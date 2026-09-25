@@ -8,10 +8,7 @@
   version: "0.1.1"
   release_label: PyPI v0.1.1
   programming_language: Python
-  category: Medical Imaging
   description: An actively developed Python library for auditing medical-imaging dataset splits. It detects cross-split file and DICOM-identifier relationships and reports structured evidence with explicit coverage boundaries for review.
-  detail_description: medlint is an alpha-stage, evidence-first Python library for auditing declared medical-imaging dataset splits before model training. It examines exact file relationships and selected DICOM identifiers across splits, then produces a deterministic report that separates observed evidence from audit coverage. The workflow is local, read-only, and designed to make potential contamination risks reviewable without changing source data. Its public API currently serves researchers and engineering teams that need a compact, inspectable pre-training checkpoint.
-  scope: Current checks focus on byte-identical files and selected DICOM identifiers across declared dataset splits.
   links:
     - label: GitHub
       url: https://github.com/mehmetaytugyuruk/medlint
@@ -28,7 +25,6 @@
   programming_language: Python
   context: Medical computer vision challenge
   description: Reproducible deep-learning pipeline for early neoplasia detection in Barrett’s oesophagus using ResNet-50 and ViT-S/16 models, grouped cross-validation, and ensemble methods.
-  homepage_description: true
   links:
     - label: GitHub
       url: https://github.com/mehmetaytugyuruk/rare26

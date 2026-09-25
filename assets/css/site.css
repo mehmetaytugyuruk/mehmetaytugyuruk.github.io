@@ -4,10 +4,8 @@
   color-scheme: light;
   --ink: #363636;
   --muted: #626262;
-  --quiet: #777;
   --link: #0878bd;
   --surface: #f5f5f5;
-  --surface-deep: #fafafa;
   --rule: #dedede;
   --shell: 1000px;
   --narrow: 800px;
@@ -76,8 +74,7 @@ h2,
 h3,
 .hero-title,
 .hero-email,
-.publication-authors,
-.teaser-caption {
+.publication-authors {
   font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
 }
 

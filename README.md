@@ -11,11 +11,12 @@ The site uses the native Jekyll support provided by GitHub Pages:
 
 ```text
 _config.yml             Site configuration
-_data/                  Profile, research, publication, and software data
-_includes/              Shared publication and footer partials
-_layouts/               Shared HTML document and page layouts
+_data/                  Profile, education, publication, and software data
+_includes/              Shared publication-card markup
+_layouts/               Shared document and legacy-route redirect layouts
 assets/css/             Site stylesheet
 assets/images/          Site, publication, and project imagery
+tools/og-card.html      Source for the social preview image
 index.html               Homepage
 publications.html         Redirect to the Publications section on the home page
 projects.html             Redirect to the Projects section on the home page
@@ -26,8 +27,7 @@ education.html            Redirect to the Education section on the home page
 pages/                    Legacy route redirects
 ```
 
-Publication facts and links are stored in `_data/publications.yml`; the home
-page reads from that source.
+Profile, education, publication, and project content is kept in `_data/`.
 
 ## Local development
 
