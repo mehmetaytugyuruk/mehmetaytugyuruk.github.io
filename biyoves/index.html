@@ -1,0 +1,163 @@
+---
+layout: default
+title: BiyoVes — Local biometric and vesikalık photo preparation
+description: Prepare biometric and Turkish vesikalık portraits locally with BiyoVes, an open-source Python app for face alignment, background matting, and automatic photo placement.
+project_site: true
+project_stylesheet: /assets/css/biyoves.css
+og_image: /assets/images/projects/biyoves/overview.png
+og_image_width: 1920
+og_image_height: 1080
+og_image_alt: BiyoVes overview showing portrait inputs, facial geometry, and prepared photo outputs.
+---
+<main id="main-content" class="biyoves-page">
+  <header class="bv-hero">
+    <div class="bv-container bv-container-narrow">
+      <p class="bv-eyebrow">LOCAL PHOTO PREPARATION</p>
+      <h1>BiyoVes</h1>
+      <p class="bv-tagline">Biometric and Turkish vesikalık portraits, prepared on your computer.</p>
+      <p class="bv-intro">Turn an everyday portrait into a clean, consistently placed, white-background photo. BiyoVes combines facial geometry, soft background matting, and format-aware composition in one local workflow.</p>
+      <nav class="bv-resource-links" aria-label="BiyoVes resources">
+        <a class="bv-resource-link" href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.69 2.5 3.26 1.13.1-.72.39-1.21.71-1.49-2.49-.28-5.1-1.25-5.1-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.07-1.15 3.07-1.15.62 1.53.23 2.67.12 2.95.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.26-5.12 5.54.4.35.76 1.03.76 2.08v2.88c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
+          <span>GitHub code</span>
+        </a>
+        <a class="bv-resource-link" href="https://huggingface.co/datasets/mehmetaytugyuruk/biyoves-faces" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">🤗</span><span>Dataset</span>
+        </a>
+        <a class="bv-resource-link" href="#quick-start"><span>Run locally</span><span aria-hidden="true">↓</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="bv-teaser bv-container" aria-label="BiyoVes overview">
+    <figure>
+      <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/overview.png' | relative_url }}" aria-label="Open the BiyoVes overview image at full resolution">
+        <img src="{{ '/assets/images/projects/biyoves/overview.png' | relative_url }}" width="1920" height="1080" alt="BiyoVes overview: synthetic portrait examples, face geometry landmarks, and prepared white-background photo outputs." fetchpriority="high">
+      </a>
+      <figcaption>From portrait input to aligned, white-background photo—with geometry and placement visible along the way.</figcaption>
+    </figure>
+  </section>
+
+  <section class="bv-section bv-shaded" id="overview" aria-labelledby="overview-title">
+    <div class="bv-container bv-container-narrow">
+      <h2 id="overview-title">A practical portrait workflow</h2>
+      <p class="bv-lead">Preparing an ID photo means more than removing its background. The face must be detected, aligned, and placed at a suitable size for the chosen format. BiyoVes automates those steps, then leaves the final decision to you.</p>
+      <div class="bv-facts" aria-label="BiyoVes at a glance">
+        <div><strong>50 × 60 mm</strong><span>Biometric preset</span></div>
+        <div><strong>45 × 60 mm</strong><span>Vesikalık preset</span></div>
+        <div><strong>300 DPI</strong><span>Output resolution</span></div>
+        <div><strong>Local</strong><span>Photos stay on your device</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bv-section bv-container" id="workflow" aria-labelledby="workflow-title">
+    <h2 id="workflow-title">How BiyoVes works</h2>
+    <p class="bv-section-intro">A compact pipeline built around facial geometry and a soft foreground matte.</p>
+    <div class="bv-method-grid">
+      <article>
+        <span class="bv-step">01</span>
+        <h3>Find facial geometry</h3>
+        <p>MediaPipe Face Landmarker estimates the eye line and facial landmarks used for roll correction and placement.</p>
+      </article>
+      <article>
+        <span class="bv-step">02</span>
+        <h3>Separate the portrait</h3>
+        <p>BiRefNet Lite creates a soft foreground matte so the original background can be replaced cleanly.</p>
+      </article>
+      <article>
+        <span class="bv-step">03</span>
+        <h3>Compose the photo</h3>
+        <p>BiyoVes places the visible head on a white canvas sized for the selected biometric or vesikalık format.</p>
+      </article>
+    </div>
+    <figure class="bv-figure bv-analysis">
+      <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/analysis.webp' | relative_url }}" aria-label="Open the facial geometry analysis image">
+        <img src="{{ '/assets/images/projects/biyoves/analysis.webp' | relative_url }}" width="1920" height="783" alt="Facial landmarks and reference lines used by BiyoVes for eye-line roll correction and portrait placement." loading="lazy" decoding="async">
+      </a>
+      <figcaption>Facial landmarks provide alignment references; matting is handled separately for the foreground.</figcaption>
+    </figure>
+  </section>
+
+  <section class="bv-section bv-shaded" id="examples" aria-labelledby="examples-title">
+    <div class="bv-container">
+      <h2 id="examples-title">See the difference</h2>
+      <p class="bv-section-intro">Synthetic examples show how varied portraits are placed on a consistent white background.</p>
+      <figure class="bv-figure bv-gallery">
+        <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/showcase.webp' | relative_url }}" aria-label="Open the before-and-after portrait examples">
+        <img src="{{ '/assets/images/projects/biyoves/showcase.webp' | relative_url }}" width="1920" height="1194" alt="Nine synthetic portrait examples, each shown before and after BiyoVes processing." loading="lazy" decoding="async">
+        </a>
+        <figcaption>Original portrait on the left; prepared output on the right.</figcaption>
+      </figure>
+      <div class="bv-preset-copy">
+        <h3>Two format presets</h3>
+        <p>Choose biometric or vesikalık dimensions. These are composition targets, not a guarantee of acceptance by an issuing authority.</p>
+      </div>
+      <figure class="bv-figure bv-gallery">
+        <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/presets.webp' | relative_url }}" aria-label="Open the biometric and vesikalık output comparison">
+          <img src="{{ '/assets/images/projects/biyoves/presets.webp' | relative_url }}" width="1920" height="1196" alt="Four synthetic subjects prepared with both the biometric and vesikalık presets." loading="lazy" decoding="async">
+        </a>
+        <figcaption>The same portrait can be prepared for either supported format.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="bv-section bv-container" id="quality" aria-labelledby="quality-title">
+    <div class="bv-container-narrow">
+      <h2 id="quality-title">A review aid, not an approval stamp</h2>
+      <p class="bv-lead">The Quality Gate suggests manual review when the smaller eye-openness score falls below <code>0.20</code> or when multiple faces are detected. If several faces are found, BiyoVes processes the largest one.</p>
+      <p class="bv-note">Photo requirements vary by issuing authority. BiyoVes helps with image preparation but does not guarantee that a photo will be accepted.</p>
+    </div>
+  </section>
+
+  <section class="bv-section bv-shaded" id="dataset" aria-labelledby="dataset-title">
+    <div class="bv-container bv-container-narrow">
+      <p class="bv-eyebrow">OPEN EVALUATION DATA</p>
+      <h2 id="dataset-title">Explore the synthetic dataset</h2>
+      <p class="bv-lead">The companion dataset contains 10 synthetic portraits and 40 eye-state images: 10 identities, each with open eyes, both eyes closed, the image-left eye closed, or the image-right eye closed.</p>
+      <div class="bv-dataset-facts">
+        <div><strong>10</strong><span>portraits</span></div>
+        <div><strong>40</strong><span>eye-state images</span></div>
+        <div><strong>4</strong><span>eye states per identity</span></div>
+        <div><strong>CC BY 4.0</strong><span>images and metadata</span></div>
+      </div>
+      <p class="bv-dataset-note">The images are synthetic and the collection is intended for demonstrations and evaluation. Portrait and eye-state IDs are independent.</p>
+      <p class="bv-centered"><a class="bv-text-link" href="https://huggingface.co/datasets/mehmetaytugyuruk/biyoves-faces" target="_blank" rel="noopener noreferrer">View the dataset on Hugging Face <span aria-hidden="true">↗</span></a></p>
+    </div>
+  </section>
+
+  <section class="bv-section bv-container" id="quick-start" aria-labelledby="quick-start-title">
+    <div class="bv-container-narrow">
+      <p class="bv-eyebrow">OPEN SOURCE · PYTHON</p>
+      <h2 id="quick-start-title">Run BiyoVes locally</h2>
+      <p class="bv-section-intro">Clone the repository, install the app, and open its local interface.</p>
+      <p class="bv-platform-label">macOS / Linux</p>
+      <pre><code>git clone https://github.com/mehmetaytugyuruk/biyoves.git
+cd biyoves
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+python app.py</code></pre>
+      <p class="bv-platform-label">Windows PowerShell</p>
+      <pre><code>git clone https://github.com/mehmetaytugyuruk/biyoves.git
+cd biyoves
+py -3 -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -e .
+python app.py</code></pre>
+      <p>Use Python 3.10–3.13. Then open <code>http://127.0.0.1:7860</code>. The first run downloads and verifies the models while online; later processing can run offline.</p>
+      <p class="bv-centered"><a class="bv-text-link" href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">Read the full documentation on GitHub <span aria-hidden="true">↗</span></a></p>
+    </div>
+  </section>
+
+  <footer class="bv-footer">
+    <div class="bv-container">
+      <p>BiyoVes is open-source software licensed under MIT. Its synthetic evaluation dataset is published separately under CC BY 4.0.</p>
+      <nav class="bv-footer-links" aria-label="Project links">
+        <a href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://huggingface.co/datasets/mehmetaytugyuruk/biyoves-faces" target="_blank" rel="noopener noreferrer">Hugging Face dataset</a>
+        <a href="https://mehmetaytugyuruk.github.io/">Mehmet Aytuğ Yürük</a>
+      </nav>
+    </div>
+  </footer>
+</main>

@@ -1,0 +1,445 @@
+/* BiyoVes project page, following the personal site's light academic theme. */
+
+.biyoves-page {
+  --bv-shell: 1000px;
+  --bv-narrow: 780px;
+  color: var(--ink);
+}
+
+.bv-container {
+  width: min(calc(100% - 3rem), var(--bv-shell));
+  margin-inline: auto;
+}
+
+.bv-container-narrow {
+  max-width: var(--bv-narrow);
+}
+
+.bv-hero {
+  padding: clamp(3.5rem, 8vw, 6.25rem) 0 2rem;
+  text-align: center;
+}
+
+.bv-eyebrow {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.bv-hero h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: clamp(3.25rem, 8vw, 5.3rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 1.04;
+}
+
+.bv-tagline {
+  max-width: 750px;
+  margin: 1rem auto 0;
+  color: var(--ink);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+
+.bv-intro {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.bv-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1.65rem;
+}
+
+.bv-resource-link {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.52rem 1.1rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: #fff;
+  background: var(--ink);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.bv-resource-link:hover {
+  transform: translateY(-1px);
+  border-color: #202020;
+  color: #fff;
+  background: #202020;
+  text-decoration: none;
+}
+
+.bv-resource-link svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.bv-teaser {
+  padding-top: 1rem;
+  padding-bottom: 3.25rem;
+}
+
+.bv-teaser figure,
+.bv-figure {
+  margin: 0;
+}
+
+.bv-figure-link {
+  display: block;
+  color: inherit;
+}
+
+.bv-figure-link img {
+  width: 100%;
+  height: auto;
+  margin-inline: auto;
+  object-fit: contain;
+}
+
+.bv-teaser img {
+  max-height: 610px;
+  background: #f4f4f4;
+}
+
+.bv-teaser figcaption,
+.bv-figure figcaption {
+  max-width: 800px;
+  margin: 0.8rem auto 0;
+  color: var(--muted);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.bv-section {
+  padding-block: clamp(3rem, 6vw, 4.25rem);
+}
+
+.bv-section + .bv-section {
+  border-top: 1px solid var(--rule);
+}
+
+.bv-shaded {
+  background: var(--surface);
+}
+
+.bv-section h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.bv-lead {
+  margin: 1.2rem 0 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.bv-section-intro {
+  max-width: 760px;
+  margin: 0.7rem auto 2rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.bv-facts,
+.bv-dataset-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2.2rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.bv-facts > div,
+.bv-dataset-facts > div {
+  display: flex;
+  min-height: 112px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 0.25rem;
+  text-align: center;
+}
+
+.bv-facts strong,
+.bv-dataset-facts strong {
+  color: var(--ink);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+
+.bv-facts span,
+.bv-dataset-facts span {
+  margin-top: 0.42rem;
+  color: var(--muted);
+  font-size: 0.87rem;
+  line-height: 1.45;
+}
+
+.bv-method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.bv-method-grid article {
+  padding-top: 1rem;
+  border-top: 2px solid var(--rule);
+}
+
+.bv-step {
+  color: var(--link);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.bv-method-grid h3,
+.bv-preset-copy h3 {
+  margin: 0.55rem 0 0.45rem;
+  color: var(--ink);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.bv-method-grid p,
+.bv-preset-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.bv-analysis {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.bv-analysis img {
+  background: #fff;
+}
+
+.bv-gallery {
+  margin-top: 2rem;
+}
+
+.bv-gallery img {
+  background: #fff;
+}
+
+.bv-preset-copy {
+  max-width: 760px;
+  margin: 3.25rem auto 0;
+  text-align: center;
+}
+
+.bv-note,
+.bv-dataset-note {
+  padding: 1rem 1.2rem;
+  margin: 1.3rem 0 0;
+  border-left: 3px solid var(--link);
+  color: var(--muted);
+  background: #fff;
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+.bv-dataset-facts {
+  margin-top: 1.8rem;
+}
+
+.bv-dataset-facts strong {
+  font-size: 1.5rem;
+}
+
+.bv-dataset-note {
+  background: transparent;
+}
+
+.bv-centered {
+  margin-top: 1.4rem;
+  text-align: center;
+}
+
+.bv-text-link {
+  color: var(--link);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.bv-platform-label {
+  margin: 1.25rem 0 0.5rem;
+  color: var(--ink);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 0.96rem;
+  font-weight: 700;
+}
+
+.biyoves-page pre {
+  overflow-x: auto;
+  padding: 1rem 1.1rem;
+  margin: 0;
+  border: 1px solid var(--rule);
+  border-radius: 0.4rem;
+  color: #292929;
+  background: #f7f7f7;
+  font-size: 0.87rem;
+  line-height: 1.55;
+  tab-size: 4;
+}
+
+.biyoves-page code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.biyoves-page p code,
+.bv-lead code {
+  padding: 0.1em 0.34em;
+  border-radius: 0.2em;
+  background: #eee;
+  font-size: 0.88em;
+}
+
+.bv-footer {
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  background: var(--surface);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.bv-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.3rem;
+  margin-top: 0.75rem;
+}
+
+.bv-footer-links a {
+  color: var(--link);
+  font-weight: 600;
+}
+
+@media (max-width: 760px) {
+  .bv-container {
+    width: min(calc(100% - 2rem), var(--bv-shell));
+  }
+
+  .bv-hero {
+    padding-top: 3.3rem;
+  }
+
+  .bv-teaser {
+    padding-bottom: 2.4rem;
+  }
+
+  .bv-method-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .bv-method-grid article {
+    padding-top: 0.8rem;
+  }
+
+  .bv-facts,
+  .bv-dataset-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .bv-facts > div:nth-child(-n + 2),
+  .bv-dataset-facts > div:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
+@media (max-width: 520px) {
+  .bv-container {
+    width: min(calc(100% - 1.5rem), var(--bv-shell));
+  }
+
+  .bv-intro,
+  .bv-lead {
+    font-size: 0.98rem;
+  }
+
+  .bv-resource-links {
+    gap: 0.5rem;
+  }
+
+  .bv-resource-link {
+    min-height: 42px;
+    padding-inline: 0.85rem;
+    font-size: 0.88rem;
+  }
+
+  .bv-section {
+    padding-block: 2.75rem;
+  }
+
+  .bv-facts strong {
+    font-size: 1.15rem;
+  }
+
+  .bv-dataset-facts strong {
+    font-size: 1.25rem;
+  }
+
+  .biyoves-page pre {
+    padding: 0.85rem;
+    font-size: 0.77rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bv-resource-link {
+    transition: none;
+  }
+}

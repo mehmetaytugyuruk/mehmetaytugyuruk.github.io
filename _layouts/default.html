@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% assign meta_title = page.title | default: site.title %}
+    {% assign social_image = page.og_image | default: '/assets/images/site/og-image.png' | absolute_url %}
     {% if page.home %}
       <title>{{ site.title }}</title>
+    {% elsif page.project_site %}
+      <title>{{ meta_title }}</title>
     {% else %}
       <title>{{ meta_title }} — {{ site.title }}</title>
     {% endif %}
@@ -14,21 +17,21 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
 
-    <meta property="og:title" content="{% if page.home %}{{ site.title }}{% else %}{{ meta_title }} — {{ site.title }}{% endif %}">
+    <meta property="og:title" content="{% if page.home %}{{ site.title }}{% elsif page.project_site %}{{ meta_title }}{% else %}{{ meta_title }} — {{ site.title }}{% endif %}">
     <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ page.url | replace: 'index.html', '' | absolute_url }}">
-    <meta property="og:image" content="{{ '/assets/images/site/og-image.png' | absolute_url }}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="{{ site.data.profile.name }} — {{ site.data.profile.role }}">
+    <meta property="og:image" content="{{ social_image }}">
+    <meta property="og:image:width" content="{{ page.og_image_width | default: 1200 }}">
+    <meta property="og:image:height" content="{{ page.og_image_height | default: 630 }}">
+    <meta property="og:image:alt" content="{{ page.og_image_alt | default: site.data.profile.name | escape }}">
     <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:site_name" content="{% if page.project_site %}BiyoVes{% else %}{{ site.title }}{% endif %}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% if page.home %}{{ site.title }}{% else %}{{ meta_title }} — {{ site.title }}{% endif %}">
+    <meta name="twitter:title" content="{% if page.home %}{{ site.title }}{% elsif page.project_site %}{{ meta_title }}{% else %}{{ meta_title }} — {{ site.title }}{% endif %}">
     <meta name="twitter:description" content="{{ page.description | default: site.description | escape }}">
-    <meta name="twitter:image" content="{{ '/assets/images/site/og-image.png' | absolute_url }}">
+    <meta name="twitter:image" content="{{ social_image }}">
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/site/favicon-16.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/site/favicon-32.png' | relative_url }}">
@@ -40,10 +43,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=20260923-slice-theme">
+    {% if page.project_stylesheet %}<link rel="stylesheet" href="{{ page.project_stylesheet | relative_url }}?v=20260925-biyoves">{% endif %}
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      {% if page.project_site %}
+      "@type": "SoftwareApplication",
+      "name": "BiyoVes",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Windows, macOS, Linux",
+      "url": {{ page.url | replace: 'index.html', '' | absolute_url | jsonify }},
+      "codeRepository": "https://github.com/mehmetaytugyuruk/biyoves",
+      "description": {{ page.description | jsonify }},
+      "license": "https://opensource.org/license/mit",
+      "inLanguage": "en"
+      {% else %}
       "@graph": [
         {
           "@type": "Person",
@@ -79,10 +94,11 @@
           "inLanguage": {{ site.lang | jsonify }}
         }
       ]
+      {% endif %}
     }
     </script>
   </head>
-  <body class="{% if page.home %}home{% else %}interior{% endif %}">
+  <body class="{% if page.project_site %}project-site{% elsif page.home %}home{% else %}interior{% endif %}">
     <a class="skip-link" href="#main-content">Skip to content</a>
     {{ content }}
   </body>
