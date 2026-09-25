@@ -41,6 +41,14 @@
   text-wrap: balance;
 }
 
+.bv-intro {
+  max-width: 700px;
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
 .bv-resource-links,
 .bv-footer-links {
   display: flex;
@@ -76,6 +84,11 @@
   color: #fff;
   background: #202020;
   text-decoration: none;
+}
+
+.bv-resource-link svg {
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 .bv-teaser {
@@ -147,6 +160,13 @@
   line-height: 1.8;
 }
 
+.bv-section-intro {
+  max-width: 760px;
+  margin: 0.7rem auto 2rem;
+  color: var(--muted);
+  text-align: center;
+}
+
 .bv-facts,
 .bv-dataset-facts {
   display: grid;
@@ -185,8 +205,64 @@
   line-height: 1.45;
 }
 
+.bv-method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.bv-method-grid article {
+  padding-top: 1rem;
+  border-top: 2px solid var(--rule);
+}
+
+.bv-step {
+  color: var(--link);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+}
+
+.bv-method-grid h3,
+.bv-preset-copy h3 {
+  margin: 0.55rem 0 0.45rem;
+  color: var(--ink);
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.bv-method-grid p,
+.bv-preset-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.bv-analysis {
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+.bv-analysis img,
+.bv-gallery img {
+  background: #fff;
+}
+
 .bv-gallery {
   margin-top: 2rem;
+}
+
+.bv-preset-copy {
+  max-width: 760px;
+  margin: 3.25rem auto 0;
+  text-align: center;
 }
 
 .bv-centered {
@@ -272,6 +348,16 @@
     padding-bottom: 2.4rem;
   }
 
+  .bv-method-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .bv-method-grid article {
+    padding-top: 0.8rem;
+  }
+
   .bv-facts,
   .bv-dataset-facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -301,6 +387,10 @@
 
   .bv-section {
     padding-block: 2.75rem;
+  }
+
+  .bv-intro {
+    font-size: 0.98rem;
   }
 
   .bv-facts strong,
