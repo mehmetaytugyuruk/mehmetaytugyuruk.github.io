@@ -42,7 +42,7 @@
   image_height: 1194
   programming_language: Python
   context: Python app · Local photo processing
-  description: A local-first app for biometric and Turkish vesikalık portraits, with facial geometry, background matting, automatic placement, and advisory quality checks.
+  description: A local-first app for Turkish biometric and vesikalık portraits, with facial geometry, background matting, automatic placement, and advisory quality checks.
   links:
     - label: GitHub
       url: https://github.com/mehmetaytugyuruk/biyoves
