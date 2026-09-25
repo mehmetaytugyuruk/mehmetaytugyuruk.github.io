@@ -33,10 +33,8 @@
     <meta name="twitter:description" content="{{ page.description | default: site.description | escape }}">
     <meta name="twitter:image" content="{{ social_image }}">
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/site/favicon-16.png' | relative_url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/site/favicon-32.png' | relative_url }}">
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/images/site/favicon-192.png' | relative_url }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/site/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" href="{{ site.data.profile.portrait | relative_url }}?v=20260925-profile-icon">
+    <link rel="apple-touch-icon" href="{{ site.data.profile.portrait | relative_url }}?v=20260925-profile-icon">
     <meta name="theme-color" content="#ffffff">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
