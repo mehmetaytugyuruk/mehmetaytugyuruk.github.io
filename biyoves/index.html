@@ -46,6 +46,49 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
         <div><strong>300 DPI</strong><span>Print resolution</span></div>
         <div><strong>Local</strong><span>On-device processing</span></div>
       </div>
+      <div class="bv-note">
+        <strong>Review guidance.</strong> Single-person portraits are recommended. The app flags closed eyes, multiple faces, and head or chin clipping for manual review. When multiple faces are detected, it uses the largest face only when the foreground matte can be linked to that face; an ambiguous or shared matte is rejected instead of mixing people. These checks are advisory and do not guarantee acceptance by an issuing authority.
+      </div>
+    </div>
+  </section>
+
+  <section class="bv-section bv-container" id="support" aria-labelledby="support-title">
+    <div class="bv-container-narrow">
+      <h2 id="support-title">Supported platforms</h2>
+      <p class="bv-section-intro">BiyoVes supports the platform and architecture combinations covered by its pinned computer-vision dependency wheels.</p>
+      <div class="bv-table-scroll">
+        <table class="bv-support-table">
+          <thead>
+            <tr>
+              <th scope="col">Operating system</th>
+              <th scope="col">Architecture</th>
+              <th scope="col">Python</th>
+              <th scope="col">Coverage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Linux (glibc 2.28+)</th>
+              <td>x86_64</td>
+              <td>3.10–3.13</td>
+              <td>CI-tested</td>
+            </tr>
+            <tr>
+              <th scope="row">macOS 14+</th>
+              <td>arm64</td>
+              <td>3.10–3.13</td>
+              <td>Dependency wheels available</td>
+            </tr>
+            <tr>
+              <th scope="row">Windows 10/11</th>
+              <td>x86_64</td>
+              <td>3.10–3.13</td>
+              <td>Dependency wheels available</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="bv-start-note">Linux arm64, macOS x86_64, and Windows arm64 are not release targets for the current dependency set.</p>
     </div>
   </section>
 
@@ -126,7 +169,7 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
   <section class="bv-section bv-container" id="quick-start" aria-labelledby="quick-start-title">
     <div class="bv-container-narrow">
       <h2 id="quick-start-title">How to use</h2>
-      <p class="bv-section-intro">Install BiyoVes and start its local app.</p>
+      <p class="bv-section-intro">Clone the repository, install its dependencies, and start the local app.</p>
       <p class="bv-platform-label">macOS / Linux</p>
       <pre><code>git clone https://github.com/mehmetaytugyuruk/biyoves.git
 cd biyoves
