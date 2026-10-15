@@ -123,9 +123,9 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared biometric an
       <h2 id="quick-start-title">How to use</h2>
       <p class="bv-section-intro">Run one setup command for your platform. BiyoVes installs locally and opens its private web app on your computer.</p>
       <p class="bv-platform-label">Windows PowerShell</p>
-      <pre><code>$p = Join-Path $env:TEMP "biyoves-install.ps1"; Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/mehmetaytugyuruk/biyoves/main/install-windows.ps1 -OutFile $p; &amp; powershell.exe -NoProfile -ExecutionPolicy Bypass -File $p</code></pre>
+      <pre><code>$p = Join-Path $env:TEMP "biyoves-install.ps1"; Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/mehmetaytugyuruk/biyoves/main/installers/install-windows.ps1 -OutFile $p; &amp; powershell.exe -NoProfile -ExecutionPolicy Bypass -File $p</code></pre>
       <p class="bv-platform-label">macOS / Linux</p>
-      <pre><code>curl -fsSL https://raw.githubusercontent.com/mehmetaytugyuruk/biyoves/main/install-unix.sh -o /tmp/biyoves-install.sh &amp;&amp; bash /tmp/biyoves-install.sh</code></pre>
+      <pre><code>curl -fsSL https://raw.githubusercontent.com/mehmetaytugyuruk/biyoves/main/installers/install-unix.sh -o /tmp/biyoves-install.sh &amp;&amp; bash /tmp/biyoves-install.sh</code></pre>
       <p class="bv-start-note">Windows setup can install Python 3.13 for the current user when needed. macOS and Linux require Python 3.10–3.13 and <code>curl</code>. The first setup downloads and verifies the models; later launches use the installed local environment. Open <code>http://127.0.0.1:7860</code>, choose Biometric or Vesikalık, upload one photo, and download the three PNG outputs.</p>
       <p class="bv-centered"><a class="bv-text-link" href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">Full instructions on GitHub</a></p>
     </div>
