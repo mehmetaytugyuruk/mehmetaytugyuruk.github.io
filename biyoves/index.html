@@ -121,12 +121,19 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared biometric an
   <section class="bv-section bv-container" id="quick-start" aria-labelledby="quick-start-title">
     <div class="bv-container-narrow">
       <h2 id="quick-start-title">How to use</h2>
-      <p class="bv-section-intro">Run one setup command for your platform. BiyoVes installs locally and opens its private web app on your computer.</p>
-      <p class="bv-platform-label">Windows PowerShell</p>
-      <pre><code>$p = Join-Path $env:TEMP "biyoves-install.ps1"; Invoke-WebRequest -UseBasicParsing https://raw.githubusercontent.com/mehmetaytugyuruk/biyoves/main/installers/install-windows.ps1 -OutFile $p; &amp; powershell.exe -NoProfile -ExecutionPolicy Bypass -File $p</code></pre>
-      <p class="bv-platform-label">macOS / Linux</p>
-      <pre><code>curl -fsSL https://raw.githubusercontent.com/mehmetaytugyuruk/biyoves/main/installers/install-unix.sh -o /tmp/biyoves-install.sh &amp;&amp; bash /tmp/biyoves-install.sh</code></pre>
-      <p class="bv-start-note">Windows setup can install Python 3.13 for the current user when needed. macOS and Linux require Python 3.10–3.13 and <code>curl</code>. The first setup downloads and verifies the models; later launches use the installed local environment. Open <code>http://127.0.0.1:7860</code>, choose Biometric or Vesikalık, upload one photo, and download the three PNG outputs.</p>
+      <p class="bv-section-intro">Install Python 3.10–3.13 yourself, then clone the repository and install BiyoVes in a virtual environment.</p>
+      <p class="bv-platform-label">Clone the repository and create a virtual environment</p>
+      <pre><code>git clone https://github.com/mehmetaytugyuruk/biyoves.git
+cd biyoves
+python -m venv .venv</code></pre>
+      <p class="bv-platform-label">Activate the environment in Windows PowerShell</p>
+      <pre><code>.\.venv\Scripts\Activate.ps1</code></pre>
+      <p class="bv-platform-label">Activate the environment on macOS / Linux</p>
+      <pre><code>source .venv/bin/activate</code></pre>
+      <p class="bv-platform-label">Install and run</p>
+      <pre><code>pip install -e .
+python -m biyoves</code></pre>
+      <p class="bv-start-note">Open <code>http://127.0.0.1:7860</code> in your browser. The first run may download the required model files; later runs use the local cache. Choose Biometric or Vesikalık, upload one photo, and download the three PNG outputs.</p>
       <p class="bv-centered"><a class="bv-text-link" href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">Full instructions on GitHub</a></p>
     </div>
   </section>
