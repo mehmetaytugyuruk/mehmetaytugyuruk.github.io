@@ -42,4 +42,6 @@
   links:
     - label: GitHub
       url: https://github.com/mehmetaytugyuruk/biyoves
+    - label: Dataset
+      url: https://huggingface.co/datasets/mehmetaytugyuruk/biyoves-faces
   website: https://mehmetaytugyuruk.github.io/biyoves/
