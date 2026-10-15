@@ -38,10 +38,8 @@
   image_height: 1194
   programming_language: Python
   context: Python app · Local photo processing
-  description: A local-first app for biometric and vesikalık portraits, with facial geometry, BiRefNet Lite background matting, three hair-detail PNG outputs, and advisory quality checks.
+  description: A local-first app for biometric and vesikalık portraits that creates three prepared PNG outputs on a white canvas.
   links:
     - label: GitHub
       url: https://github.com/mehmetaytugyuruk/biyoves
-    - label: Dataset
-      url: https://huggingface.co/datasets/mehmetaytugyuruk/biyoves-faces
   website: https://mehmetaytugyuruk.github.io/biyoves/
