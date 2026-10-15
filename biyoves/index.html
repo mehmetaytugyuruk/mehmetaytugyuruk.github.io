@@ -1,7 +1,7 @@
 ---
 layout: default
-title: BiyoVes — Local Turkish biometric and vesikalık photo preparation
-description: Prepare Turkish biometric and vesikalık portraits locally with BiyoVes, a free open-source app.
+title: BiyoVes — Local biometric photo processing
+description: Prepare biometric portraits locally with BiyoVes, a free open-source app.
 project_site: true
 project_stylesheet: /assets/css/biyoves.css
 og_image: /assets/images/projects/biyoves/overview.png
@@ -13,8 +13,8 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
   <header class="bv-hero">
     <div class="bv-container bv-container-narrow">
       <h1>BiyoVes</h1>
-      <p class="bv-tagline">Prepare Turkish biometric and vesikalık photos on your computer.</p>
-      <p class="bv-intro">Turn an everyday portrait into a clean, consistently placed, white-background photo. BiyoVes combines facial geometry, soft background matting, and format-aware composition in one local workflow.</p>
+      <p class="bv-tagline">Prepare biometric photos on your computer.</p>
+      <p class="bv-intro">Turn an everyday portrait into a clean, consistently placed, white-background biometric photo. BiyoVes combines facial geometry, BiRefNet Lite background matting, and three hair-detail variants in one local workflow.</p>
       <nav class="bv-resource-links" aria-label="BiyoVes resources">
         <a class="bv-resource-link" href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.69 2.5 3.26 1.13.1-.72.39-1.21.71-1.49-2.49-.28-5.1-1.25-5.1-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.07-1.15 3.07-1.15.62 1.53.23 2.67.12 2.95.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.26-5.12 5.54.4.35.76 1.03.76 2.08v2.88c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
@@ -31,7 +31,7 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
   <section class="bv-teaser bv-container" aria-label="BiyoVes overview">
     <figure>
       <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/overview.png' | relative_url }}" aria-label="Open the BiyoVes overview image at full resolution">
-        <img src="{{ '/assets/images/projects/biyoves/overview.png' | relative_url }}" width="1920" height="1080" alt="BiyoVes turns portraits into white-background biometric and vesikalık photos." fetchpriority="high">
+        <img src="{{ '/assets/images/projects/biyoves/overview.png' | relative_url }}" width="1920" height="1080" alt="BiyoVes turns a portrait into three white-background biometric photo outputs." fetchpriority="high">
       </a>
     </figure>
   </section>
@@ -39,15 +39,15 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
   <section class="bv-section bv-shaded" id="overview" aria-labelledby="overview-title">
     <div class="bv-container bv-container-narrow">
       <h2 id="overview-title">What BiyoVes does</h2>
-      <p class="bv-lead">BiyoVes aligns a portrait, replaces its background, and places it on a white canvas. Choose a 50 × 60 mm biometric or 45 × 60 mm vesikalık format. Photos are processed on your computer.</p>
+      <p class="bv-lead">BiyoVes aligns a portrait, replaces its background, and places it on a 50 × 60 mm white biometric canvas. Each uploaded photo produces three hair-detail PNG outputs, processed entirely on your computer.</p>
       <div class="bv-facts" aria-label="BiyoVes at a glance">
         <div><strong>50 × 60 mm</strong><span>Biometric</span></div>
-        <div><strong>45 × 60 mm</strong><span>Vesikalık</span></div>
-        <div><strong>300 DPI</strong><span>Print resolution</span></div>
+        <div><strong>3</strong><span>Hair-detail outputs</span></div>
+        <div><strong>600 DPI</strong><span>PNG metadata</span></div>
         <div><strong>Local</strong><span>On-device processing</span></div>
       </div>
       <div class="bv-note">
-        <strong>Review guidance.</strong> Single-person portraits are recommended. The app flags closed eyes, multiple faces, and head or chin clipping for manual review. When multiple faces are detected, it uses the largest face only when the foreground matte can be linked to that face; an ambiguous or shared matte is rejected instead of mixing people. These checks are advisory and do not guarantee acceptance by an issuing authority.
+        <strong>Review guidance.</strong> The workflow assumes one person per photo. Closed-eye and head-or-chin clipping checks remain advisory quality signals; there is no separate multiple-person rejection or face-selection workflow. These checks do not guarantee acceptance by an issuing authority.
       </div>
     </div>
   </section>
@@ -94,13 +94,13 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
 
   <section class="bv-section bv-container" id="benchmark" aria-labelledby="benchmark-title">
     <div class="bv-container-narrow">
-      <h2 id="benchmark-title">Batch processing benchmark</h2>
-      <p class="bv-lead">BiyoVes processed 1,000 photos in 9 minutes 7 seconds. At an assumed expert preparation time of 2 minutes per photo, preparing the same 1,000 photos manually would take 2,000 minutes (33 hours 20 minutes).</p>
-      <div class="bv-facts" aria-label="Batch processing benchmark results">
-        <div><strong>9 min 7 sec</strong><span>BiyoVes batch time</span></div>
-        <div><strong>1,000</strong><span>photos processed</span></div>
-        <div><strong>33 hr 20 min</strong><span>estimated manual preparation</span></div>
-        <div><strong>200×+</strong><span>faster than estimated manual prep</span></div>
+      <h2 id="benchmark-title">Three output variants</h2>
+      <p class="bv-lead">One uploaded photo produces three final PNGs. The variants share the 992 × 992 body branch and use 256, 416, or 608 pixel hair-detail inputs.</p>
+      <div class="bv-facts" aria-label="BiyoVes output variants">
+        <div><strong>256 px</strong><span>Low hair detail</span></div>
+        <div><strong>416 px</strong><span>Medium hair detail</span></div>
+        <div><strong>608 px</strong><span>High hair detail</span></div>
+        <div><strong>3 PNGs</strong><span>Per uploaded photo</span></div>
       </div>
     </div>
   </section>
@@ -121,7 +121,7 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
       <article>
         <span class="bv-step">03</span>
         <h3>Prepare the photo</h3>
-        <p>The portrait is placed on a white canvas in the selected format.</p>
+        <p>The portrait is placed on a fixed 50 × 60 mm biometric white canvas.</p>
       </article>
     </div>
     <figure class="bv-figure bv-analysis">
@@ -141,14 +141,14 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
       <figcaption>Original portraits and prepared outputs.</figcaption>
     </figure>
     <div class="bv-preset-copy">
-      <h3>Two format presets</h3>
-      <p>Choose a biometric or vesikalık layout. Requirements can vary by issuing authority.</p>
+      <h3>Three hair-detail outputs</h3>
+      <p>The same biometric composition is rendered with low, medium, and high hair-detail inputs.</p>
     </div>
     <figure class="bv-figure bv-gallery">
-      <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/presets.webp' | relative_url }}" aria-label="Open the biometric and vesikalık output comparison">
-        <img src="{{ '/assets/images/projects/biyoves/presets.webp' | relative_url }}" width="1920" height="1196" alt="Four synthetic subjects prepared with biometric and vesikalık presets." loading="lazy" decoding="async">
+      <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/presets.webp' | relative_url }}" aria-label="Open the hair-detail output comparison">
+        <img src="{{ '/assets/images/projects/biyoves/presets.webp' | relative_url }}" width="1920" height="1196" alt="Synthetic subjects shown with BiyoVes output variants." loading="lazy" decoding="async">
       </a>
-      <figcaption>The same portrait prepared with both formats.</figcaption>
+      <figcaption>Example output variants from the same processing workflow.</figcaption>
     </figure>
   </section>
 
@@ -184,7 +184,7 @@ py -3 -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -e .
 python app.py</code></pre>
-      <p class="bv-start-note">Requires Python 3.10–3.13. Open <code>http://127.0.0.1:7860</code> after starting the app. The first run downloads its models.</p>
+      <p class="bv-start-note">Requires Python 3.10–3.13. Open <code>http://127.0.0.1:7860</code>, upload one photo, and download the three PNG outputs. The first run downloads and verifies its models.</p>
       <p class="bv-centered"><a class="bv-text-link" href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">Full instructions on GitHub</a></p>
     </div>
   </section>
