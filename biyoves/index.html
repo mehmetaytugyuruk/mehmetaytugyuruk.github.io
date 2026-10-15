@@ -1,20 +1,20 @@
 ---
 layout: default
-title: BiyoVes — Local biometric photo processing
-description: Prepare biometric portraits locally with BiyoVes, a free open-source app.
+title: BiyoVes — Local biometric and vesikalık photo processing
+description: Prepare biometric and vesikalık portraits locally with BiyoVes, a free open-source app.
 project_site: true
 project_stylesheet: /assets/css/biyoves.css
 og_image: /assets/images/projects/biyoves/overview.png
 og_image_width: 1920
 og_image_height: 1080
-og_image_alt: BiyoVes overview showing portrait inputs and prepared photo outputs.
+og_image_alt: BiyoVes overview showing portrait inputs and prepared biometric and vesikalık outputs.
 ---
 <main id="main-content" class="biyoves-page">
   <header class="bv-hero">
     <div class="bv-container bv-container-narrow">
       <h1>BiyoVes</h1>
-      <p class="bv-tagline">Prepare biometric photos on your computer.</p>
-      <p class="bv-intro">Turn an everyday portrait into a clean, consistently placed, white-background biometric photo. BiyoVes combines facial geometry, BiRefNet Lite background matting, and three hair-detail variants in one local workflow.</p>
+      <p class="bv-tagline">Prepare biometric and vesikalık photos on your computer.</p>
+      <p class="bv-intro">Turn an everyday portrait into a clean, consistently placed, white-background biometric or vesikalık photo. BiyoVes combines facial geometry, BiRefNet Lite background matting, and three hair-detail variants in one local workflow.</p>
       <nav class="bv-resource-links" aria-label="BiyoVes resources">
         <a class="bv-resource-link" href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.69 2.5 3.26 1.13.1-.72.39-1.21.71-1.49-2.49-.28-5.1-1.25-5.1-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.07-1.15 3.07-1.15.62 1.53.23 2.67.12 2.95.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.26-5.12 5.54.4.35.76 1.03.76 2.08v2.88c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg>
@@ -31,7 +31,7 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
   <section class="bv-teaser bv-container" aria-label="BiyoVes overview">
     <figure>
       <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/overview.png' | relative_url }}" aria-label="Open the BiyoVes overview image at full resolution">
-        <img src="{{ '/assets/images/projects/biyoves/overview.png' | relative_url }}" width="1920" height="1080" alt="BiyoVes turns a portrait into three white-background biometric photo outputs." fetchpriority="high">
+        <img src="{{ '/assets/images/projects/biyoves/overview.png' | relative_url }}" width="1920" height="1080" alt="BiyoVes turns a portrait into three white-background biometric or vesikalık photo outputs." fetchpriority="high">
       </a>
     </figure>
   </section>
@@ -39,11 +39,11 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
   <section class="bv-section bv-shaded" id="overview" aria-labelledby="overview-title">
     <div class="bv-container bv-container-narrow">
       <h2 id="overview-title">What BiyoVes does</h2>
-      <p class="bv-lead">BiyoVes aligns a portrait, replaces its background, and places it on a 50 × 60 mm white biometric canvas. Each uploaded photo produces three hair-detail PNG outputs, processed entirely on your computer.</p>
+      <p class="bv-lead">BiyoVes aligns a portrait, replaces its background, and places it on the selected white biometric or vesikalık canvas. Each uploaded photo produces three hair-detail PNG outputs, processed entirely on your computer.</p>
       <div class="bv-facts" aria-label="BiyoVes at a glance">
         <div><strong>50 × 60 mm</strong><span>Biometric</span></div>
+        <div><strong>45 × 60 mm</strong><span>Vesikalık</span></div>
         <div><strong>3</strong><span>Hair-detail outputs</span></div>
-        <div><strong>600 DPI</strong><span>PNG metadata</span></div>
         <div><strong>Local</strong><span>On-device processing</span></div>
       </div>
       <div class="bv-note">
@@ -55,7 +55,7 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
   <section class="bv-section bv-container" id="support" aria-labelledby="support-title">
     <div class="bv-container-narrow">
       <h2 id="support-title">Supported platforms</h2>
-      <p class="bv-section-intro">BiyoVes supports the platform and architecture combinations covered by its pinned computer-vision dependency wheels.</p>
+      <p class="bv-section-intro">BiyoVes currently targets the platform and architecture combinations covered by its pinned computer-vision dependency wheels. These are source-install targets; a no-install Windows package is not published yet.</p>
       <div class="bv-table-scroll">
         <table class="bv-support-table">
           <thead>
@@ -71,24 +71,55 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
               <th scope="row">Linux (glibc 2.28+)</th>
               <td>x86_64</td>
               <td>3.10–3.13</td>
-              <td>CI-tested</td>
+              <td>CI import-tested</td>
             </tr>
             <tr>
               <th scope="row">macOS 14+</th>
               <td>arm64</td>
               <td>3.10–3.13</td>
-              <td>Dependency wheels available</td>
+              <td>CI import-tested</td>
             </tr>
             <tr>
               <th scope="row">Windows 10/11</th>
               <td>x86_64</td>
               <td>3.10–3.13</td>
-              <td>Dependency wheels available</td>
+              <td>CI import-tested</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="bv-start-note">Linux arm64, macOS x86_64, and Windows arm64 are not release targets for the current dependency set.</p>
+      <p class="bv-start-note">Linux arm64, macOS x86_64, and Windows arm64 are not release targets for the current dependency set. Full model inference still needs to be validated on a clean machine for each target.</p>
+    </div>
+  </section>
+
+  <section class="bv-section bv-shaded" id="formats" aria-labelledby="formats-title">
+    <div class="bv-container bv-container-narrow">
+      <h2 id="formats-title">Output formats</h2>
+      <p class="bv-section-intro">Choose the format before processing the photo. The visible head dimensions are composition targets for the selected canvas.</p>
+      <div class="bv-table-scroll">
+        <table class="bv-support-table">
+          <thead>
+            <tr>
+              <th scope="col">Format</th>
+              <th scope="col">Canvas</th>
+              <th scope="col">Visible head target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Biometric</th>
+              <td>50 × 60 mm</td>
+              <td>36 mm</td>
+            </tr>
+            <tr>
+              <th scope="row">Vesikalık</th>
+              <td>45 × 60 mm</td>
+              <td>32 mm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="bv-start-note">These are BiyoVes composition targets and do not guarantee acceptance by an issuing authority.</p>
     </div>
   </section>
 
@@ -121,7 +152,7 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
       <article>
         <span class="bv-step">03</span>
         <h3>Prepare the photo</h3>
-        <p>The portrait is placed on a fixed 50 × 60 mm biometric white canvas.</p>
+        <p>The portrait is placed on the selected 50 × 60 mm biometric or 45 × 60 mm vesikalık white canvas.</p>
       </article>
     </div>
     <figure class="bv-figure bv-analysis">
@@ -142,7 +173,7 @@ og_image_alt: BiyoVes overview showing portrait inputs and prepared photo output
     </figure>
     <div class="bv-preset-copy">
       <h3>Prepared portrait examples</h3>
-      <p>These examples show the local background matting and biometric placement workflow.</p>
+      <p>These examples show the local background matting and biometric or vesikalık placement workflow.</p>
     </div>
     <figure class="bv-figure bv-gallery">
       <a class="bv-figure-link" href="{{ '/assets/images/projects/biyoves/presets.webp' | relative_url }}" aria-label="Open the prepared portrait examples">
@@ -184,7 +215,7 @@ py -3 -m venv .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -e .
 python app.py</code></pre>
-      <p class="bv-start-note">Requires Python 3.10–3.13. Open <code>http://127.0.0.1:7860</code>, upload one photo, and download the three PNG outputs. The first run downloads and verifies its models.</p>
+      <p class="bv-start-note">Requires Python 3.10–3.13. Open <code>http://127.0.0.1:7860</code>, choose Biometric or Vesikalık, upload one photo, and download the three PNG outputs. The first run downloads and verifies its models. A ready-to-run Windows installer is planned but is not available yet.</p>
       <p class="bv-centered"><a class="bv-text-link" href="https://github.com/mehmetaytugyuruk/biyoves" target="_blank" rel="noopener noreferrer">Full instructions on GitHub</a></p>
     </div>
   </section>
