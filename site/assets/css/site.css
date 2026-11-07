@@ -1,0 +1,449 @@
+/* Mehmet Aytuğ Yürük — light academic portfolio */
+
+:root {
+  color-scheme: light;
+  --ink: #363636;
+  --muted: #626262;
+  --link: #0878bd;
+  --surface: #f5f5f5;
+  --rule: #dedede;
+  --shell: 1000px;
+  --narrow: 800px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 20rem;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background: #fff;
+  font-family: "Noto Sans", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+.hero-title,
+.hero-email {
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 5px;
+}
+
+.container {
+  width: min(calc(100% - 3rem), var(--shell));
+  margin-inline: auto;
+}
+
+.publication-container {
+  width: min(calc(100% - 3.5rem), 1220px);
+}
+
+.narrow {
+  max-width: var(--narrow);
+}
+
+.skip-link {
+  position: absolute;
+  z-index: 5;
+  top: -100px;
+  left: 1rem;
+  padding: 0.65rem 1rem;
+  background: #fff;
+  color: var(--ink);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Profile header */
+
+.hero {
+  display: flex;
+  min-height: 100svh;
+  align-items: center;
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
+  text-align: center;
+}
+
+.hero-card {
+  margin-inline: auto;
+}
+
+.hero .container.narrow {
+  width: min(calc(100% - 2rem), 880px);
+  max-width: 880px;
+}
+
+.hero-portrait {
+  width: clamp(9.35rem, 24.2vw, 11.55rem);
+  aspect-ratio: 1;
+  margin: 0 auto 1.375rem;
+}
+
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--surface);
+  object-fit: contain;
+}
+
+.hero-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-name {
+  max-width: 1089px;
+  margin: 0 auto 0.715rem;
+  color: var(--ink);
+  font-size: clamp(2.2rem, 4.62vw, 3.3rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.hero-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.43rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.hero-email {
+  margin: 0.33rem 0 0;
+  font-size: 1.1rem;
+}
+
+.hero-email a {
+  color: var(--link);
+}
+
+.social-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.66rem;
+  margin-top: 1.65rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.55rem 1.21rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: #fff;
+  background: var(--ink);
+  font-family: "Noto Sans", Arial, sans-serif;
+  font-size: 1.045rem;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.social-link:hover {
+  border-color: #202020;
+  color: #fff;
+  background: #202020;
+  text-decoration: none;
+}
+
+.hero-bio {
+  max-width: 880px;
+  margin: 1.925rem auto 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* One-page sections */
+
+.home-section {
+  padding-block: 3rem;
+}
+
+.home-section + .home-section {
+  border-top: 1px solid var(--rule);
+}
+
+.home-section.shaded {
+  background: var(--surface);
+}
+
+#publications.home-section,
+#projects.home-section,
+#education.home-section {
+  padding: 54px 0 58px;
+}
+
+.home-section-heading {
+  margin-bottom: 2rem;
+}
+
+.home-section-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.publication-content {
+  min-width: 0;
+  max-width: 900px;
+  margin-inline: auto;
+  font-family: "Google Sans", "Noto Sans", Arial, sans-serif;
+  line-height: 1.68;
+}
+
+.publication-list {
+  border-top: 1px solid var(--rule);
+}
+
+.publication-record {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+  padding: 23px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.publication-visual {
+  display: block;
+  width: 100%;
+}
+
+.publication-visual--placeholder {
+  display: flex;
+  aspect-ratio: 16 / 9;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule);
+  background: #eaeaea;
+  color: #777;
+}
+
+.publication-placeholder-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.publication-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+.education-logo img {
+  width: 75px;
+  height: 75px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.education-logo .round-logo {
+  border-radius: 50%;
+}
+
+.publication-body h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-wrap: wrap;
+}
+
+.publication-title-link {
+  color: inherit;
+}
+
+.publication-authors {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.57;
+}
+
+.publication-venue {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.055em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.publication-links {
+  margin: 9px 0 0;
+  font-size: 0.89rem;
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(calc(100% - 2rem), var(--shell));
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.32rem;
+  }
+
+  .home-section {
+    padding-block: 2.5rem;
+  }
+
+  #publications.home-section,
+  #projects.home-section,
+  #education.home-section {
+    padding: 40px 0 44px;
+  }
+
+  .home-section-heading h2 {
+    font-size: 1.75rem;
+  }
+
+  .publication-container {
+    width: min(1220px, calc(100% - 32px));
+  }
+
+  .publication-record {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .publication-visual {
+    max-width: 420px;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .hero-portrait {
+    width: min(9.35rem, 52.8vw);
+  }
+
+  .hero-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .social-link {
+    padding-inline: 0.44rem;
+    font-size: 0.92rem;
+  }
+
+  .hero-bio {
+    text-align: left;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .skip-link {
+    display: none;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
